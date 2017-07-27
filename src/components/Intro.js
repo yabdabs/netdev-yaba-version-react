@@ -12,7 +12,12 @@ class Intro extends React.Component {
       bio: null
     };
   } //close Constructor
+render(){
+	return(
 
+
+		)
+}
 
 
 

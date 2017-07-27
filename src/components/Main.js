@@ -8,6 +8,21 @@ import Header from './Header';
 
 
 class Main extends React.Component {
+  constructor() {
+    super();
+
+    this.state ={
+      proPic: null,
+      name: null,
+      bio: null,
+      location: null,
+      skills: null,
+      porfolio: [],
+      collabs: [null]
+      };
+
+    };//close Constructor
+
 	render(){
 		return(
 
@@ -20,7 +35,7 @@ class Main extends React.Component {
         <form className="login">
           <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="email-input" placeholder="Email"/>
+            <input type="email" className="form-control" id="email-input" placeholder="Email" />
           </div>
           <div className="form-group">
             <label for="exampleInputPassword1">Password</label>
