@@ -1,0 +1,102 @@
+/* GENERAL STYLES*/
+body {
+	background-color: #F1EFEF;
+	/*background-image: url(../img/paw-bg-3.png);*/
+	background-attachment: fixed;
+	background-size: 85px;
+	background-repeat: repeat;
+}
+
+#login-page {
+	background-color: #F1EFEF;
+	background-image: url(../img/code-bg.jpg);
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
+.form-entry {
+	color: black;
+}
+
+hr {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+h4 {
+	color: black;
+	font-size: 36px;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	color: black;
+}
+
+.arrow {
+	font-size: 35px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 12px;
+}
+
+/* NAVBAR STYLES */
+#dyna-nav {
+	opacity: 0.95;
+	background-color: #FFFFFF;
+}
+
+#logo {
+	color: black;
+	font-family: 'Roboto', cursive;
+}
+
+.nav-icon {
+	color: black;
+	font-size: 25px;
+}
+
+.nav-search {
+	color: black;
+	font-size: 20px;
+}
+
+#search-bar {
+	width: 100px;
+}
+
+/* PROFILE/GALLERY STYLES */
+.progress {
+	height: 10px;
+}
+
+.profile-content {
+	background-color: white;
+	border-style: solid;
+	border-color: #F3F3F3;
+	border-width: 1px;
+}
+
+.profile-pic {
+	width: 70%;
+	max-width: 70%;
+	height: auto;
+	margin-top: 20px;
+}
+
+.profile-bio {
+	color: black;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.img-cell {
+	height: 285px;
+	margin-bottom: 2%;
+	overflow: hidden;
+}
+
+.post-pic-gallery {
+	min-width: 80%;
+	max-width: 80%;
+}
