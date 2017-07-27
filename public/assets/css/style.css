@@ -7,17 +7,6 @@ body {
 	background-repeat: repeat;
 }
 
-#login-page {
-	background-color: #F1EFEF;
-	background-image: url(../img/code-bg.jpg);
-	background-attachment: fixed;
-	background-size: 100%;
-}
-
-.form-entry {
-	color: black;
-}
-
 hr {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -33,12 +22,27 @@ a {
 	color: black;
 }
 
-.arrow {
-	font-size: 35px;
-	margin-left: 15px;
-	margin-right: 15px;
-	margin-top: 12px;
+
+/* LOGIN PAGE */
+#login-page {
+	background-color: #F1EFEF;
+	background-image: url(../img/code-bg.jpg);
+	background-attachment: fixed;
+	background-size: 100%;
 }
+
+.form-entry {
+	color: black;
+}
+
+.signup-form {
+	background-color: white;
+	border-style: solid;
+	border-color: #F3F3F3;
+	border-width: 5px;
+	/*opacity: 0.95;*/
+}
+
 
 /* NAVBAR STYLES */
 #dyna-nav {
@@ -49,6 +53,7 @@ a {
 #logo {
 	color: black;
 	font-family: 'Roboto', cursive;
+	/*font-weight: bold;*/
 }
 
 .nav-icon {
@@ -65,7 +70,8 @@ a {
 	width: 100px;
 }
 
-/* PROFILE/GALLERY STYLES */
+
+/* PROFILE PAGE */
 .progress {
 	height: 10px;
 }
@@ -99,4 +105,11 @@ a {
 .post-pic-gallery {
 	min-width: 80%;
 	max-width: 80%;
+}
+
+.arrow {
+	font-size: 35px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 12px;
 }
