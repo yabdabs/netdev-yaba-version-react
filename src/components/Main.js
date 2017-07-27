@@ -32,6 +32,8 @@ class Main extends React.Component {
         <p>Or sign up <a href="/">here</a></p>
       </div>
     </div>
+
+    <Profile />
   </div>
 
 			)//close return

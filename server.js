@@ -5,7 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require Click schema
-var Click = require("./models/usser");
+var Developer = require("./models/Developer");
 
 // Create a new express app
 var app = express();
@@ -24,7 +24,7 @@ app.use(express.static("build"));
 // -------------------------------------------------
 
 // MongoDB configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://localhost/FinalProject");
+mongoose.connect("mongodb://localhost/NetDev");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -34,6 +34,14 @@ db.on("error", function(err) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
+
+
+
+//CREATE BACKEND ROUTES--MAKE DIR FOR ROUTES LATER
+Model.findById(obj._id, function (err, doc){
+  // doc is a Document
+});
+
 
 
 // Starting our express server

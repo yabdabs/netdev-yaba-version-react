@@ -3,13 +3,13 @@ var bcrypt = require("bcrypt-nodejs");
 
 var Schema = mongoose.Schema;
 
-var Developer = new Schema({
+var DeveloperSchema = new Schema({
 
 	name: {
 		type: String,
 		required: true
-
 	},
+
 	password: {
 		type: String,
 		required: true,
@@ -23,32 +23,42 @@ var Developer = new Schema({
       // Error Message
       "Password must be longer than 6 characters"
     ]
-
-	}
+	},
 
 	email: {
 		type: String,
 		match: [/.+\@.+\..+/, "Enter a valid e-mail"]
 	},
+
 	pictures: {
 		type: Array
 		},
+
+	portfolio: [
+		{
+		img: String,
+		url: String,
+		}
+
+	],	
+
 	bio: {
 		type:String
 	},
+
 	location: {
 		type:String,
 		required: true
 	},
 
-	friends: [
+	collaborators: [
 		 {
 			img: String,
-			link: String
-			name: 
+			link: String,
+			name: String 
 		}
 	],
-	
+
 	skills: [
 		 {
 			skillname: String,
@@ -56,13 +66,7 @@ var Developer = new Schema({
 		}
 	],
 
-	// To Check if there profile is company or WebDev 
-	isCompany: {
-		type: Boolean,
-		default: false //or 0
-
-	},
-	  userCreated: {
+	userCreated: {
     type: Date,
     default: Date.now
   }
@@ -88,6 +92,6 @@ var Developer = new Schema({
     })
 
 // Save the Library model using the LibrarySchema
-var Library = mongoose.model("Library", 
+var Developer = mongoose.model("Developer", DeveloperSchema);
 
-module.exports = Library;
+module.exports = Developer;
