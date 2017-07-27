@@ -3,7 +3,7 @@ var bcrypt = require("bcrypt-nodejs");
 
 var Schema = mongoose.Schema;
 
-var User = new Schema({
+var Developer = new Schema({
 
 	name: {
 		type: String,
@@ -41,28 +41,32 @@ var User = new Schema({
 		required: true
 	},
 
-	friends: {
-		type:Array
-	},
+	friends: [
+		 {
+			img: String,
+			link: String
+			name: 
+		}
+	],
 	
+	skills: [
+		 {
+			skillname: String,
+			value: Number
+		}
+	],
 
 	// To Check if there profile is company or WebDev 
 	isCompany: {
 		type: Boolean,
-		required:true
+		default: false //or 0
 
 	},
-	userCreated: {
+	  userCreated: {
     type: Date,
     default: Date.now
   }
   
-
-	//Inlude user data association here
-
-
-
-
 
 
 
@@ -71,7 +75,7 @@ var User = new Schema({
 })
 
 
-//PASSPORT PW encrypter (hasher)
+//PASSPORT PW encrypter (hasher) 
     //prototype method/function for User model--comparison check between unhashed password and hashed password in mySQL DB
     User.prototype.validPassword = function(password) {
         return bcrypt.compareSync(password, this.password);
@@ -83,10 +87,7 @@ var User = new Schema({
         // cb(null, options);
     })
 
+// Save the Library model using the LibrarySchema
+var Library = mongoose.model("Library", 
 
-
-// Create the Book model with the BookSchema
-var Book = mongoose.model("Book", BookSchema);
-
-// Export the model so we can use it on our server file.
-module.exports = Book;
+module.exports = Library;
