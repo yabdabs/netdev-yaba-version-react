@@ -3,7 +3,7 @@ var bcrypt = require("bcrypt-nodejs");
 
 var Schema = mongoose.Schema;
 
-var User = new Schema({
+var Company = new Schema({
 
 	name: {
 		type: String,
@@ -52,7 +52,7 @@ var User = new Schema({
 		required:true
 
 	},
-	userCreated: {
+	  userCreated: {
     type: Date,
     default: Date.now
   }
@@ -82,11 +82,3 @@ var User = new Schema({
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
         // cb(null, options);
     })
-
-
-
-// Create the Book model with the BookSchema
-var Book = mongoose.model("Book", BookSchema);
-
-// Export the model so we can use it on our server file.
-module.exports = Book;
