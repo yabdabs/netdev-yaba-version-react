@@ -1,9 +1,9 @@
 /* GENERAL STYLES*/
 body {
 	background-color: #F1EFEF;
-	/*background-image: url(../img/paw-bg-3.png);*/
+	background-image: url(../img/tile-bg.png);
 	background-attachment: fixed;
-	background-size: 85px;
+	background-size: 360px;
 	background-repeat: repeat;
 }
 

@@ -1,5 +1,9 @@
 import React from 'react';
 
+import helpers from '../util/helper';
+
+
+
 class Intro extends React.Component {
 	  constructor(){
     super();
@@ -13,7 +17,12 @@ class Intro extends React.Component {
     };
   } //close Constructor
 
+render(){
+	return(
 
+
+		)//close return
+}//close render block
 
 
 
