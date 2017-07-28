@@ -1,9 +1,9 @@
 import React from 'react';
 import helpers from '../utils/helpers';
 
-const Header = () =>
+const Background = () =>
 	return (
-		<h1>HEADER</h1>
+		<h1>BACKGROUND</h1>
 	);
 	
-export default Header;
+export default Background;

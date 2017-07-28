@@ -1,9 +1,9 @@
 import React from 'react';
 import helpers from '../utils/helpers';
 
-const Header = () =>
+const Skills = () =>
 	return (
-		<h1>HEADER</h1>
+		<h1>SKILLS</h1>
 	);
 	
-export default Header;
+export default Skills;

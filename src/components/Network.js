@@ -1,9 +1,9 @@
 import React from 'react';
 import helpers from '../utils/helpers';
 
-const Header = () =>
+const Network = () =>
 	return (
-		<h1>HEADER</h1>
+		<h1>NETWORK</h1>
 	);
 	
-export default Header;
+export default Network;
