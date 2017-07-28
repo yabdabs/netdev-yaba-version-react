@@ -4,17 +4,21 @@ import helpers from '../utils/helpers';
 const Header = () =>
 	return (
 
+		{/* HEADER NAVBAR */}
 		<div className="navbar-fixed">
 			<nav id="dyna-nav" role="navigation">
 		    <div className="nav-wrapper container">
 					
 					<div className="row">
 
+						{/* LOGO */}
 						<div className="col s4">
 				      <a id="logo" href="/" className="brand-logo">
 				      NetDev.me</a>
 						</div>
-						
+						{/* END LOGO */}
+
+						{/* SEARCH BAR */}
 						<div className="col s4">
 							<div className="row">
 
@@ -33,7 +37,10 @@ const Header = () =>
 
 					    </div>
 						</div>
-						<!-- COMMENT -->
+						{/* END SEARCH BAR */}
+
+
+						{/* USER ICONS */}
 						<div className="col s4">
 				      <ul className="right hide-on-med-and-down">
 				      	<li><a href="#"><i className="fa fa-user nav-icon" aria-hidden="true"></i></a></li>
@@ -43,12 +50,13 @@ const Header = () =>
 				        <li><a href="#"><i className="fa fa-cog nav-icon" aria-hidden="true"></i></a></li>
 				      </ul>
 			      </div>
+			    	{/* END USER ICONS */}
 
 		      </div>
-
 		    </div>
 		  </nav>
 	  </div>
+		{/* END HEADER NAVBAR */}
 	);
 	
 export default Header;
