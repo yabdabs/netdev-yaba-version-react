@@ -1,7 +1,7 @@
 import React from 'react';
-import helpers from '../utils/helpers';
 
-const Header = () =>
+
+const Header = () =>  //  or change to class Header extends React.Component
 	return (
 
 		{/* HEADER NAVBAR */}
@@ -59,4 +59,5 @@ const Header = () =>
 		{/* END HEADER NAVBAR */}
 	);
 	
+
 export default Header;

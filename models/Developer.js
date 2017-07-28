@@ -3,13 +3,13 @@ var bcrypt = require("bcrypt-nodejs");
 
 var Schema = mongoose.Schema;
 
-var User = new Schema({
+var DeveloperSchema = new Schema({
 
 	name: {
 		type: String,
 		required: true
-
 	},
+
 	password: {
 		type: String,
 		required: true,
@@ -23,46 +23,54 @@ var User = new Schema({
       // Error Message
       "Password must be longer than 6 characters"
     ]
-
-	}
+	},
 
 	email: {
 		type: String,
 		match: [/.+\@.+\..+/, "Enter a valid e-mail"]
 	},
+
 	pictures: {
 		type: Array
 		},
+
+	portfolio: [
+		{
+		img: String,
+		url: String,
+		}
+
+	],	
+
 	bio: {
 		type:String
 	},
+
 	location: {
 		type:String,
 		required: true
 	},
 
-	friends: {
-		type:Array
-	},
-	
+	collaborators: [
+		 {
+			img: String,
+			link: String,
+			name: String 
+		}
+	],
 
-	// To Check if there profile is company or WebDev 
-	isCompany: {
-		type: Boolean,
-		required:true
+	skills: [
+		 {
+			skillname: String,
+			value: Number
+		}
+	],
 
-	},
 	userCreated: {
     type: Date,
     default: Date.now
   }
   
-
-	//Inlude user data association here
-
-
-
-
 
 
 
@@ -71,7 +79,7 @@ var User = new Schema({
 })
 
 
-//PASSPORT PW encrypter (hasher)
+//PASSPORT PW encrypter (hasher) 
     //prototype method/function for User model--comparison check between unhashed password and hashed password in mySQL DB
     User.prototype.validPassword = function(password) {
         return bcrypt.compareSync(password, this.password);
@@ -83,10 +91,7 @@ var User = new Schema({
         // cb(null, options);
     })
 
+// Save the Library model using the LibrarySchema
+var Developer = mongoose.model("Developer", DeveloperSchema);
 
-
-// Create the Book model with the BookSchema
-var Book = mongoose.model("Book", BookSchema);
-
-// Export the model so we can use it on our server file.
-module.exports = Book;
+module.exports = Developer;
