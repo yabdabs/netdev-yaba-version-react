@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcryptjs');
@@ -51,5 +52,15 @@ userSchema.methods = {
 	}
 };
 
+// Define hooks for pre-saving
+User.pre('save', function(next) {
+	this.password = this.hashPassword(this.password)
+	next()
+})
+
 
 module.exports = mongoose.model('User', User);
+// Create reference to User & export
+// const User = mongoose.model('User', userSchema)
+// module.exports = User
+
