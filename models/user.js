@@ -1,92 +1,66 @@
-var mongoose = require("mongoose");
-var bcrypt = require("bcrypt-nodejs");
 
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var bcrypt = require('bcryptjs');
 
 var User = new Schema({
+    username: {
+    	type: String,
+    	required: true,
+    	unique: true
+    },
+    fullname: {
+    	type: String,
+    	required: true
+    },
+    password: {
+    	type: String,
+    	required: true
+    },
+    email: {
+        type: String,
+        match: [/.+\@.+\..+/, "Enter a valid e-mail"]
+    },
+    description: String,
+    location: {
+    	city: String,
+    	state: String
+    },
+    skills: [{
+    	skillName: String,
+    	value: Number
+    }],
+    idPic: {
+    	link: String
+    },
+    pictureLinks: [{
+    	link: String
+    }],
+    friends: [{
+    	id: String,
+    	name: String,
+    	idPic: String
+    }]
+});
 
-	name: {
-		type: String,
-		required: true
-
+userSchema.methods = {
+	checkPassword: function(inputPassword) {
+		return bcrypt.compareSync(inputPassword, this.password)
 	},
-	password: {
-		type: String,
-		required: true,
-		trim: true,
-		validate: [
-      // Function takes in the value as an argument
-      function(input) {
-        // If this returns true, proceed. If not, return an error message
-        return input.length >= 6;
-      },
-      // Error Message
-      "Password must be longer than 6 characters"
-    ]
-
+	hashPassword: plainTextPassword => {
+		return bcrypt.hashSync(plainTextPassword, 10)
 	}
+};
 
-	email: {
-		type: String,
-		match: [/.+\@.+\..+/, "Enter a valid e-mail"]
-	},
-	pictures: {
-		type: Array
-		},
-	bio: {
-		type:String
-	},
-	location: {
-		type:String,
-		required: true
-	},
-
-	friends: {
-		type:Array
-	},
-	
-
-	// To Check if there profile is company or WebDev 
-	isCompany: {
-		type: Boolean,
-		required:true
-
-	},
-	userCreated: {
-    type: Date,
-    default: Date.now
-  }
-  
-
-	//Inlude user data association here
-
-
-
-
-
-
-
-
-
+// Define hooks for pre-saving
+User.pre('save', function(next) {
+	this.password = this.hashPassword(this.password)
+	next()
 })
 
 
-//PASSPORT PW encrypter (hasher)
-    //prototype method/function for User model--comparison check between unhashed password and hashed password in mySQL DB
-    User.prototype.validPassword = function(password) {
-        return bcrypt.compareSync(password, this.password);
-    }
+module.exports = mongoose.model('User', User);
+// Create reference to User & export
+// const User = mongoose.model('User', userSchema)
+// module.exports = User
 
-    //Hook is hashing password before User is created (from Sequelize model)
-    User.hook("beforeCreate", function(user, options) {
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-        // cb(null, options);
-    })
-
-
-
-// Create the Book model with the BookSchema
-var Book = mongoose.model("Book", BookSchema);
-
-// Export the model so we can use it on our server file.
-module.exports = Book;
