@@ -1,4 +1,6 @@
 import React from 'react';
+import helpers from '../util/helper';
+
 
 // import child componenents
 
@@ -56,3 +58,4 @@ class Main extends React.Component {
 };//close Main component
 
 export default Main
+

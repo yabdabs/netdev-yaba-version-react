@@ -1,6 +1,7 @@
 import React from 'react';
 
-import helpers from '../utils/helpers';
+
+import helpers from '../utils/helper';
 
 class Profile extends React.Component {
 	constructor() {

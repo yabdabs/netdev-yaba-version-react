@@ -1,9 +1,9 @@
 import React from 'react';
 import helpers from '../utils/helpers';
 
-const Contact = () =>
+const Background = () =>
 	return (
-		<h1>CONTACT</h1>
+		<h1>BACKGROUND</h1>
 	);
 	
-export default Contact;
+export default Background;
