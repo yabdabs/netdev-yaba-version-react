@@ -17,12 +17,15 @@ class Intro extends React.Component {
     };
   } //close Constructor
 
+
 render(){
 	return(
 
 
+
 		)//close return
 }//close render block
+
 
 
 

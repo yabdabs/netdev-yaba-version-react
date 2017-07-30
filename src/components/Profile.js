@@ -3,12 +3,12 @@ import React from 'react';
 
 import helpers from '../utils/helper';
 
-class Main extends React.Component {
+class Profile extends React.Component {
 	constructor() {
 		super();
 
 		this.state ={
-			proPic: null,
+			picture: null,
 			name: null,
 			bio: null,
 			location: null,
@@ -19,32 +19,35 @@ class Main extends React.Component {
 
 		};
 
-		this.getDevName = this.state.getDevName.bind(this)
+		this.getDevName = this.state.getDevName.bind(this);
+		this.getDevPicture = this.state.getDevPicture.bind(this);
+		this.getDevBio = this.state.getDevBio.bind(this);
+		this.getDevLocation = this.state.getDevLocation.bind(this);
 	} //Close Constructor
 
 //CALLING HELPER FUNCTIONS HERE OR IN GRANDPARENT (MAIN.JS)
 componentDidMount(){
 console.log("Component Mounted!!!");
 //GET DEV NAME REQUEST
-helpers.getDevName().then(response => {
+helpers.getDevName(this.state.name???).then(response => {
 // BLOCK OF CODE
 this.setState({name: response.data});
 
 //GET DEV PIC REQUEST
 helpers.getDevPicture().then(response => {
 // BLOCK OF CODE
-this.setState({name: response.data});
+this.setState({picture: response.data});
 
 
 //GET DEV BIO REQUEST
 helpers.getDevBio().then(response => {
 // BLOCK OF CODE
-this.setState({name: response.data});
+this.setState({bio: response.data});
 
 //GET DEV LOC REQUEST
 helpers.getDevLocation().then(response => {
 // BLOCK OF CODE
-this.setState({name: response.data});
+this.setState({location: response.data});
 
 
 
@@ -57,21 +60,24 @@ this.setState({name: response.data});
 }
 
 //or Declare GET FUNCTIONS HERE AND PASS TO CHILDREN
-
+// 									??????????    
+// 									?????????? 
+// 									?????????? 
+// 									?????????? 
 helpers.getDevName = event => {
 	this.setState({name: this.state.name???})
 }
 
 helpers.getDevPicture = event => {
-	this.setState({picture: this.state.name???})
+	this.setState({picture: this.state.picture???})
 }
 
 helpers.getDevBio = event => {
-	this.setState({bio: this.state.name???})
+	this.setState({bio: this.state.bio???})
 }
 
 helpers.getDevLocation = event => {
-	this.setState({location: this.state.name???})
+	this.setState({location: this.state.location???})
 }
 
 	render(){
