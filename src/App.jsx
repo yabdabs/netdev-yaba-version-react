@@ -75,7 +75,7 @@ class App extends Component {
 				{/*<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />*/}
 
 				{/*  ROUTES */}
-				<Route exact path="/" render={() => <MainForm _login={this._login} _googleSignin={this._googleSignin}/>} />
+				<Route exact path="/" render={() => <MainForm _login={this._login} />} />
 				{/*<Route
 					exact
 					path="/login"

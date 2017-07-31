@@ -4,13 +4,18 @@ var bcrypt = require('bcryptjs');
 mongoose.promise = Promise
 
 
-var User = new Schema({
-    username: {
-    	type: String,
-    	required: true,
-    	unique: true
+var UserSchema = new Schema({
+    // userName: {
+    // 	type: String,
+    // 	required: true,
+    // 	unique: true
+    // },
+    firstName: {
+        type: String,
+        required: true
     },
-    fullname: {
+
+    lastName: {
     	type: String,
     	required: true
     },
@@ -20,7 +25,9 @@ var User = new Schema({
     },
     email: {
         type: String,
-        match: [/.+\@.+\..+/, "Enter a valid e-mail"]
+        match: [/.+\@.+\..+/, "Enter a valid e-mail"],
+        required: true,
+        unique: true
     },
     description: String,
     location: {
@@ -44,7 +51,7 @@ var User = new Schema({
     }]
 });
 
-userSchema.methods = {
+UserSchema.methods = {
 	checkPassword: function(inputPassword) {
 		return bcrypt.compareSync(inputPassword, this.password)
 	},
@@ -57,4 +64,4 @@ userSchema.methods = {
 };
 
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', UserSchema);
