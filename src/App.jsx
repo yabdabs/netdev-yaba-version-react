@@ -12,7 +12,8 @@ class App extends Component {
 		super()
 		this.state = {
 			loggedIn: false,
-			user: null
+			user: null,
+			redirectTo: null
 		}
 		this._logout = this._logout.bind(this)
 		this._login = this._login.bind(this)
@@ -50,10 +51,10 @@ class App extends Component {
 		})
 	}
 
-	_login(username, password) {
+	_login(email, password) {
 		axios
 			.post('/auth/login', {
-				username,
+				email,
 				password
 			})
 			.then(response => {
@@ -68,6 +69,12 @@ class App extends Component {
 			})
 	}
 
+	_handleRedirect(){
+		this.setState({
+			redirectTo: '/'
+		})
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -75,7 +82,7 @@ class App extends Component {
 				{/*<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />*/}
 
 				{/*  ROUTES */}
-				<Route exact path="/" render={() => <MainForm _login={this._login} />} />
+				<Route exact path="/" render={() => <MainForm _login={this._login} _handleRedirect = {this._handleRedirect} redirectTo={this.state.redirectTo} />} />
 				{/*<Route
 					exact
 					path="/login"

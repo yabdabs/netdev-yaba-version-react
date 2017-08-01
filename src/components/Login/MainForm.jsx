@@ -16,7 +16,7 @@ class MainForm extends Component {
       lastName: "",
       signUpEmail:"",
       signUpPassword: "",
-      redirectTo: ""
+      // redirectTo: ""
       // loggedIn: false,
 		}
 		// this.googleSignin = this.googleSignin.bind(this)
@@ -35,9 +35,9 @@ class MainForm extends Component {
 		console.log(this)
 		event.preventDefault()
 		console.log('handleSubmit')
-		this.props._login(this.state.username, this.state.password)
+		this.props._login(this.state.email, this.state.password)
 		this.setState({
-			redirectTo: '/'
+			redirectTo: '/home'
 		})
 	}
 
@@ -55,10 +55,8 @@ class MainForm extends Component {
 					console.log(response)
 					if (!response.data.errmsg) {
 						console.log('youre good')
-						this.setState({
-							redirectTo: '/'
-						})
-						debugger
+						this.props._handleRedirect
+						// debugger
 					} else {
 						console.log('duplicate')
 					}
@@ -66,9 +64,9 @@ class MainForm extends Component {
 		}
 
 	render() {
-		if (this.state.redirectTo) {
+		if (this.props.redirectTo) {
 			console.log('redirecting')
-			return <Redirect to={{ pathname: this.state.redirectTo }} />
+			return <Redirect to={{ pathname: this.props.redirectTo }} />
 		} else {
 			return (
 
