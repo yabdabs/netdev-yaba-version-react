@@ -59,9 +59,19 @@ UserSchema.methods = {
 		return bcrypt.hashSync(plainTextPassword, 10)
 	}
 
-    // this.password = this.hashPassword(this.password)
-    // next()
 };
 
+// Define hooks for pre-saving
+UserSchema.pre('save', function(next) {
+    if (!this.password) {
+        console.log('=======NO PASSWORD PROVIDED=======')
+        next()
+    } else {
+        this.password = this.hashPassword(this.password)
+        next()
+    }
+    this.password = this.hashPassword(this.password)
+    next()
+})
 
 module.exports = mongoose.model('User', UserSchema);

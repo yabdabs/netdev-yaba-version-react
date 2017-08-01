@@ -36,9 +36,9 @@ class MainForm extends Component {
 		event.preventDefault()
 		console.log('handleSubmit')
 		this.props._login(this.state.email, this.state.password)
-		this.setState({
-			redirectTo: '/home'
-		})
+		console.log(this.state.email)
+		console.log(this.state.password)
+		this.props._handleHomeRedirect
 	}
 
 		handleSignUp = (event) => {

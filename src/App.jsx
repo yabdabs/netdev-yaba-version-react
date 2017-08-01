@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Route, Link } from 'react-router-dom'
 import './App.css'
 import MainForm from './components/Login/MainForm'
+import Main from './components/Profile/main'
 // import SignupForm from './components/SignupForm'
 /*import Header from './components/Header'*/
 /*import Home from './components/Home'*/
@@ -54,8 +55,8 @@ class App extends Component {
 	_login(email, password) {
 		axios
 			.post('/auth/login', {
-				email,
-				password
+				email: email,
+				password:password
 			})
 			.then(response => {
 				console.log(response)
@@ -63,7 +64,8 @@ class App extends Component {
 					// update the state
 					this.setState({
 						loggedIn: true,
-						user: response.data.user
+						user: response.data.user,
+						redirectTo: "/profile"
 					})
 				}
 			})
@@ -75,25 +77,28 @@ class App extends Component {
 		})
 	}
 
+	_handleHomeRedirect(){
+		this.setState({
+			redirectTo: "/profile"
+		})
+	}
+
 	render() {
+		
+		if(this.state.redirectTo =="/profile") {
+			console.log('redirecting to profile route')
+
+			return <Main />
+		}
+		
 		return (
 			<div className="App">
 				{/* LINKS to our different 'pages' */}
-				{/*<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />*/}
 
 				{/*  ROUTES */}
-				<Route exact path="/" render={() => <MainForm _login={this._login} _handleRedirect = {this._handleRedirect} redirectTo={this.state.redirectTo} />} />
-				{/*<Route
-					exact
-					path="/login"
-					render={() =>
-						<LoginForm
-							_login={this._login}
-							_googleSignin={this._googleSignin}
-						/>}
-				/>*/}
-			{/*	<Route exact path="/signup" component={SignupForm} />*/}
-				{/* <LoginForm _login={this._login} /> */}
+				<Route exact path="/" render={() => <MainForm _login={this._login} _handleRedirect = {this._handleRedirect}
+					redirectTo={this.state.redirectTo} _handleHomeRedirect= {this._handleHomeRedirect}/>} />
+			
 			</div>
 		)
 	}

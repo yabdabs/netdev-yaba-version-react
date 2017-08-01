@@ -1,13 +1,10 @@
 import React from 'react';
-import helper from '../util/helper';
-
-import Intro from './Intro';
-import Skills from './Skills';
-import Projects from './Projects';
-import Network from './Network';
-import Contact from './Contact';
-
-
+// import helper from '../util/helper';
+import Intro from './intro';
+import Skills from './skills';
+import Projects from './projects';
+import Network from './network';
+import Contact from './contact'
 
 class Profile extends React.Component {
 
@@ -114,3 +111,4 @@ export default Profile;
 // 			<Contact />
 // 			)//Close Return
 // 	}//Close Render
+

@@ -9,7 +9,7 @@ class SignUp extends React.Component{
 
 	render(){
 		return(
-		<div>
+		<div id="login-page">
 			{/*TOP MARGIN*/} 
 			<div class="row">
 			<br/><br/><br/><br/>
