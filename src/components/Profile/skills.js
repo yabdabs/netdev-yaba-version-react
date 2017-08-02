@@ -44,7 +44,7 @@ class Skills extends React.Component {
 							        {/* SKILL EFFICIENCY INPUT */}
 							        <div className="input-field col s10">
 							        	<br />
-							          <p class="range-field">
+							          <p className="range-field">
 										      <input type="range" id="test5" min="0" max="100" />
 										    </p>
 							        </div>

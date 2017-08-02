@@ -37,7 +37,7 @@ class Intro extends React.Component {
 							{/* USER NAME */}
 							<div className="col s8 left-align">
 
-								<h4 className="username">First Lastname</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
+								<h4 className="username">{this.props.firstName} {this.props.lastName}</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
 							</div>
 							{/* END USER NAME */}
 
@@ -91,6 +91,7 @@ class Intro extends React.Component {
 							           id="last_name"
 							           type="text"
 							           className="validate"
+							           name="lastName"
 							           value={this.props.lastName}
 							           onChange={this.props.handleChange}
 							            />
@@ -105,6 +106,7 @@ class Intro extends React.Component {
 							          <textarea
 							           id="textarea1"
 							           className="materialize-textarea"
+							           name="bio"
 							           value={this.props.bio}
 							           onChange={this.props.handleChange}
 							           ></textarea>

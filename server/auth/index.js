@@ -17,6 +17,12 @@ router.get('/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
 	if (req.user) {
+		//Database query
+		User.findOne({email: req.user.email}, function(err, result){
+			console.log(result)
+			if (err) throw err;
+			if(result) return res.json({user :result})
+		})
 		return res.json({ user: req.user })
 	} else {
 		return res.json({ user: null })

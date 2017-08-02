@@ -14,8 +14,27 @@ class App extends Component {
 		this.state = {
 			loggedIn: false,
 			user: null,
-			redirectTo: null
-		}
+			redirectTo: null,
+
+			//from MainForm
+			email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      signUpEmail:"",
+      signUpPassword: "",
+//PROFILE STATES
+			idPic: "",
+			bio: "",
+			location: "",
+			skills: [],
+			porfolio: [],
+			friends: []
+			
+
+		};  //Close State
+
+		
 		this._logout = this._logout.bind(this)
 		this._login = this._login.bind(this)
 	}
@@ -59,13 +78,21 @@ class App extends Component {
 				password:password
 			})
 			.then(response => {
-				console.log(response)
-				if (response.status === 200) {
+				console.log(response.data.user)
+
+				if (response.status === 200) {	
 					// update the state
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
-						redirectTo: "/profile"
+						redirectTo: "/profile",
+						firstName: response.data.user.firstName,
+						lastName: response.data.user.lastName,
+						bio: response.data.user.bio,
+						location: response.data.user.location,
+						idPic: response.data.user.idPic,
+						porfolio: response.data.user.porfolio,
+						friends: response.data.user.friends
 					})
 				}
 			})
@@ -83,12 +110,41 @@ class App extends Component {
 		})
 	}
 
+	handleChange = (event) => {
+		// console.log(this)
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
+		editIntro = (event) => {
+		event.preventDefault()
+		//or .put
+		axios.post('/DECLARE ROUTE (check Laptop file', {
+			firstName: this.state.firstName,
+			lastName: this.state.lastName,
+			bio: this.state.bio,
+			location: this.state.location
+		}).then(response => {
+			console.log(response)
+			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+			console.log("Intro Updated")
+			console.log("_________________________________")
+
+		})
+	}//Close editIntro function
+
+
+
 	render() {
 		
 		if(this.state.redirectTo =="/profile") {
 			console.log('redirecting to profile route')
 
-			return <Main />
+			return <Main handleChange={this.handleChange} editIntro={this.editIntro} idPic={this.state.idPic} firstName={this.state.firstName} lastName={this.state.lastName}
+			bio={this.state.bio} skills={this.state.skills} portfolio={this.state.portfolio} friends={this.state.friends}
+			location={this.state.location}
+			/>
 		}
 		
 		return (
@@ -97,7 +153,11 @@ class App extends Component {
 
 				{/*  ROUTES */}
 				<Route exact path="/" render={() => <MainForm _login={this._login} _handleRedirect = {this._handleRedirect}
-					redirectTo={this.state.redirectTo} _handleHomeRedirect= {this._handleHomeRedirect}/>} />
+					redirectTo={this.state.redirectTo} _handleHomeRedirect= {this._handleHomeRedirect}
+					handleChange = {this.handleChange} 
+					email={this.state.email} password={this.state.password} 
+					signUpEmail={this.state.signUpEmail} signUpPassword={this.state.signUpPassword}
+					firstName={this.state.firstName} lastName={this.state.lastName} />} />
 			
 			</div>
 		)
