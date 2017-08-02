@@ -57,7 +57,6 @@ a {
 	font-family: 'Roboto', cursive;
 }
 
-
 .nav-icon {
 	color: black;
 	font-size: 25px;
@@ -75,20 +74,12 @@ a {
 
 
 /* PROFILE DIV */
-
-/* PROFILE PAGE */
-/*.progress {
-	height: 10px;
-}
-*/
-
 .profile-content {
 	background-color: white;
 	border-style: solid;
 	border-color: #F3F3F3;
 	border-width: 1px;
 }
-
 
 .edit-icon {
 	color: black;
@@ -116,7 +107,6 @@ a {
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 }
-
 
 
 
@@ -217,7 +207,6 @@ a {
 
 
 /* PROJECT SECTION */
-
 .img-cell {
 	height: 285px;
 	margin-bottom: 2%;
@@ -230,9 +219,7 @@ a {
 }
 
 
-
 /* NETWORK SECTION */
-
 
 .arrow {
 	font-size: 35px;
@@ -243,14 +230,4 @@ a {
 
 
 
-/* CONTACT SECTION */
-
-.contact-div {
-	background-image: url(../img/contact-bg6.png);
-	margin-left: -12px;
-	margin-right: -12px;
-}
-
-.form-label {
-	color: black;
-}
+/* COMMENT SECTION *
