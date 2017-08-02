@@ -1,10 +1,23 @@
 import React from 'react';
 import {Button, Modal} from 'react-materialize';
 // import helper from '../util/helper';
+// import axios from 'axios'
 
 
 
 class Intro extends React.Component {
+	constructor(){
+		super();
+
+		this.state = {
+
+		}//close State
+	}//close Constructor
+
+
+	// componentWillMount(){
+// axios.get to fetch Intro fields from Database
+	// }
 
 	render() {
 		return(
@@ -23,7 +36,8 @@ class Intro extends React.Component {
 						<div className="row">
 							{/* USER NAME */}
 							<div className="col s8 left-align">
-								<h4 className="username">First Lastname</h4>
+
+								<h4 className="username">First Lastname</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
 							</div>
 							{/* END USER NAME */}
 
@@ -59,15 +73,28 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* FIRST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="first_name" type="text" className="validate" />
-							          <label for="first_name">First Name</label>
+							          <input
+								          id="first_name" 
+								          type="text" 
+								          className="validate" 
+								          name="firstName"
+								          value={this.props.firstName}
+								          onChange={this.props.handleChange}
+							          />
+							          <label htmlFor="first_name">First Name</label>
 							        </div>
 							        {/* END FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
+							          <input
+							           id="last_name"
+							           type="text"
+							           className="validate"
+							           value={this.props.lastName}
+							           onChange={this.props.handleChange}
+							            />
+							          <label htmlFor="last_name">Last Name</label>
 							        </div>
 							        {/* END LAST NAME FIELD */}
 							      </div>
@@ -75,8 +102,13 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* SUMMARY FIELD */}
 							        <div className="input-field col s12">
-							          <textarea id="textarea1" className="materialize-textarea"></textarea>
-							          <label for="textarea1">Summary (Give a Brief Description of Who You Are)</label>
+							          <textarea
+							           id="textarea1"
+							           className="materialize-textarea"
+							           value={this.props.bio}
+							           onChange={this.props.handleChange}
+							           ></textarea>
+							          <label htmlFor="textarea1">Summary (Give a Brief Description of Who You Are)</label>
 							        </div>
 							        {/* END SUMMARY FIELD */}
 							      </div>
@@ -103,6 +135,7 @@ class Intro extends React.Component {
 
 						<div className="row">
 							{/* USER BIO */}
+							{/*Change Bio to this.props.bio or this.state.bio*/}
 							<p className="profile-bio">Full Stack Web Developer with a passion for technology and a love of 
 							coding. Dedicated to adapting and learning new languages and frameworks with disciplines in 
 							HTML5, CSS3, JavaScript, jQuery, Node, SQL, and MongoDB. A natural knack for Front-End design 

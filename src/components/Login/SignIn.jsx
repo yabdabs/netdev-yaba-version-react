@@ -45,7 +45,7 @@ class SignIn extends React.Component {
                            onChange={this.props.handleChange}
                            value={this.props.email}
                            className="validate form-entry"/>
-                          <label for="email"></label>
+                          <label htmlFor="email"></label>
                         </div>
                         <div className="input-field col s4">
                           <input                        
@@ -57,7 +57,7 @@ class SignIn extends React.Component {
                             onChange={this.props.handleChange}
                             value={this.props.password}
                             />
-                          <label for="password"></label>
+                          <label htmlFor="password"></label>
                         </div>                    
                             
                       <div className="col s4">

@@ -23,14 +23,14 @@ class Contact extends React.Component {
 			      	{/* NAME FIELD */}
 			        <div className="input-field col s6">
 			          <input id="last_name" type="text" className="validate" />
-			          <label for="last_name">Name (required)</label>
+			          <label htmlFor="last_name">Name (required)</label>
 			        </div>
 			        {/* END NAME FIELD */}
 
 			        {/* EMAIL FIELD */}
 			        <div className="input-field col s6">
 			          <input id="email" type="email" className="validate" />
-			          <label for="email">Email (required)</label>
+			          <label htmlFor="email">Email (required)</label>
 			        </div>
 			        {/* END EMAIL FIELD */}
 			      </div>
@@ -39,14 +39,14 @@ class Contact extends React.Component {
 			      	{/* COMPANY FIELD */}
 			        <div className="input-field col s6">
 			          <input id="last_name" type="text" className="validate" />
-			          <label for="last_name">Company</label>
+			          <label htmlFor="last_name">Company</label>
 			        </div>
 			        {/* END COMPANY FIELD */}
 
 			        {/* PHONE FIELD */}
 			        <div className="input-field col s6">
 			          <input id="email" type="email" className="validate" />
-			          <label for="email">Phone</label>
+			          <label htmlFor="email">Phone</label>
 			        </div>
 			        {/* END PHONE FIELD */}
 			      </div>
@@ -55,7 +55,7 @@ class Contact extends React.Component {
 			      	{/* MESSAGE FIELD */}
 			        <div className="input-field col s12">
 			          <textarea id="textarea1" className="materialize-textarea"></textarea>
-			          <label for="textarea1">Message (required)</label>
+			          <label htmlFor="textarea1">Message (required)</label>
 			        </div>
 			        {/* END MESSAGE FIELD */}
 			      </div>

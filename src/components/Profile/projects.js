@@ -36,7 +36,7 @@ class Projects extends React.Component {
 									{/* SUMMARY FIELD */}
 									<div className="input-field col s12">
 									  <input id="project_title" type="text" className="validate" />
-									  <label for="project_title">Project Title</label>
+									  <label htmlFor="project_title">Project Title</label>
 									</div>
 									{/* END SUMMARY FIELD */}
 								  </div>
@@ -61,14 +61,14 @@ class Projects extends React.Component {
 									{/* FIRST NAME FIELD */}
 									<div className="input-field col s6">
 									  <input id="demo_link" type="text" className="validate" />
-									  <label for="demo_link">Demo Link</label>
+									  <label htmlFor="demo_link">Demo Link</label>
 									</div>
 									{/* END FIRST NAME FIELD */}
 
 									{/* LAST NAME FIELD */}
 									<div className="input-field col s6">
 									  <input id="github_link" type="text" className="validate" />
-									  <label for="github_link">GitHub Link</label>
+									  <label htmlFor="github_link">GitHub Link</label>
 									</div>
 									{/* END LAST NAME FIELD */}
 								  </div>

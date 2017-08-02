@@ -11,7 +11,7 @@ class SignUp extends React.Component{
 		return(
 		<div id="login-page">
 			{/*TOP MARGIN*/} 
-			<div class="row">
+			<div className="row">
 			<br/><br/><br/><br/>
 			</div>
 
@@ -44,7 +44,7 @@ class SignUp extends React.Component{
 												onChange={this.props.handleChange}
 												value={this.props.firstName}
 											/>
-											<label for="first_name"></label>
+											<label htmlFor="first_name"></label>
 										</div>
 									</div>
 
@@ -59,7 +59,7 @@ class SignUp extends React.Component{
 											onChange={this.props.handleChange}
 											value={this.props.lastName}
 											/>
-											<label for="last_name"></label>
+											<label htmlFor="last_name"></label>
 										</div>
 									</div>
 									<div className="row">
@@ -73,7 +73,7 @@ class SignUp extends React.Component{
 												onChange={this.props.handleChange}
 												value={this.props.signUpEmail}
 											/>
-											<label for="email"></label>
+											<label htmlFor="email"></label>
 										</div>
 									</div>
 									<div className="row">
@@ -87,7 +87,7 @@ class SignUp extends React.Component{
 												onChange={this.props.handleChange}
 												value={this.props.signUpPassword}
 											/>
-											<label for="password"></label>
+											<label htmlFor="password"></label>
 										</div>
 									</div>
 

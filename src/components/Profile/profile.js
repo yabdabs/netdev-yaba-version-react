@@ -1,27 +1,78 @@
+//Import Components
 import React from 'react';
 // import helper from '../util/helper';
 import Intro from './intro';
 import Skills from './skills';
 import Projects from './projects';
 import Network from './network';
-import Contact from './contact'
+import Contact from './contact';
+//Import || Require packages
+
+import axios from 'axios'
 
 class Profile extends React.Component {
+
+	constructor() {
+		super()
+
+		this.state ={
+			proPic: null,
+			firstName: null,
+			lastName: null,
+			bio: null,
+			location: null,
+			skills: null,
+			porfolio: [],
+			friends: [null]
+			
+
+		};  //Close State
+
+		//BIND NECESSARY FUNCTIONS HERE
+		// this.getDevName = this.state.getDevName.bind(this)
+		// 
+	} //Close Constructor
+
+//DECLARE FUNCTIONS TO PASS AS PROPS HERE
+	handleChange = (event) => {
+		console.log(this)
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
+	editIntro = (event) => {
+		event.preventDefault()
+		//or .put
+		axios.post('/DECLARE ROUTE (check Laptop file', {
+			firstName: this.state.firstName,
+			lastName: this.state.lastName,
+			bio: this.state.bio,
+			location: this.state.location
+		}).then(response => {
+			console.log(response)
+			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+			console.log("Intro Updated")
+			console.log("_________________________________")
+
+		})
+	}//Close editIntro function
 
 	render() {
 		return (
 
 			<div className="col s8 profile-content z-depth-3">
-				<Intro />
+				<Intro handleChange={this.handleChange} editIntro={this.editIntro}  firstName={this.state.firstName} lastName={this.state.lastName}
+				bio={this.state.bio} />
 				<Skills />
-				<Projects />
+				<Projects handleChange={this.handleChange}/>
 				<Network />
-				<Contact />
+				<Contact handleChange={this.handleChange}/>
 			</div>
 
 		);
 	}
-};
+};  //Close Component
 
 
 export default Profile;
@@ -30,24 +81,6 @@ export default Profile;
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
  // ALL THE JS THAT IS NOT ESSENTIAL FOR MY FRONT-END RIGHT NOW IS BELOW \\
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
-
-// 	constructor() {
-// 		super();
-
-// 		this.state ={
-// 			proPic: null,
-// 			name: null,
-// 			bio: null,
-// 			location: null,
-// 			skills: null,
-// 			porfolio: [],
-// 			collabs: [null]
-			
-
-// 		};
-
-// 		this.getDevName = this.state.getDevName.bind(this)
-// 	} //Close Constructor
 
 
 // 	//CALLING HELPER FUNCTIONS HERE OR IN GRANDPARENT (MAIN.JS)

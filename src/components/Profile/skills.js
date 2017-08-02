@@ -37,7 +37,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Name</label>
+							          <label htmlFor="skill_name">Skill Name</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 

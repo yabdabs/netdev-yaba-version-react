@@ -35,14 +35,14 @@ class Network extends React.Component {
 							      	{/* FIRST NAME FIELD */}
 							        <div className="input-field col s6">
 							          <input id="first_name" type="text" className="validate" />
-							          <label for="first_name">First Name</label>
+							          <label htmlFor="first_name">First Name</label>
 							        </div>
 							        {/* END  FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
 							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
+							          <label htmlFor="last_name">Last Name</label>
 							        </div>
 							        {/* END LAST NAME FIELD */}
 							      </div>

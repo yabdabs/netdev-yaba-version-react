@@ -34,7 +34,7 @@ class Header extends React.Component {
 										<form>
 							        <div className="input-field">
 							          <input id="search" type="search" required />
-							          <label className="label-icon" for="search"></label>
+							          <label className="label-icon" htmlFor="search"></label>
 							        </div>
 							      </form>	
 						      </div>
