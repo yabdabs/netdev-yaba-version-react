@@ -29,8 +29,12 @@ var UserSchema = new Schema({
         required: true,
         unique: true
     },
-    description: String,
+    bio: {
+     type: String,
+    },
+    //May need to modify Location field
     location: {
+     type: String,
     	city: String,
     	state: String
     },
@@ -39,10 +43,10 @@ var UserSchema = new Schema({
     	value: Number
     }],
     idPic: {
-    	link: String
+    	type: String
     },
     pictureLinks: [{
-    	link: String
+    	type: String
     }],
     friends: [{
     	id: String,
