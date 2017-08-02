@@ -102,10 +102,51 @@ class SignUp extends React.Component{
 							</div>
 						</div>
 					{/*<!-- END DEVELOPER SIGN UP -->*/}
+
+					{/*<!-- COMPANY SIGN UP -->*/}
+					  <div id="comp-signup" class="col s12">
+
+					  	<h5>COMPANY SIGN UP</h5>
+
+							<div className="row">
+						    <form className="col s12">
+
+						      <div className="row">
+						        <div className="input-field col s12">
+						          <input placeholder="Company Name" id="company_name" type="text" className="validate" />
+						          <label for="company_name"></label>
+						        </div>
+						      </div>
+
+						      <div className="row">
+						        <div className="input-field col s12">
+						          <input placeholder="Email" id="email" type="email" className="validate" />
+						          <label for="email"></label>
+						        </div>
+						      </div>
+					
+						      <div className="row">
+						        <div className="input-field col s12">
+						          <input placeholder="Password" id="password" type="password" className="validate" />
+						          <label for="password"></label>
+						        </div>
+						      </div>
+									
+									<div className="row center-align">
+										<button className="btn waves-effect waves-light" type="submit" name="action">
+											Join Now
+									  </button>
+								  </div>
+
+						    </form>	
+							</div>
+					  </div>
+					{/*<!-- END COMPANY SIGN UP -->*/}
 					<br/>
 					<br/>
 				</div>
 			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br />
 		</div>
 		)
 	}
