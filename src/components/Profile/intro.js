@@ -110,7 +110,8 @@ class Intro extends React.Component {
 							           value={this.props.bio}
 							           onChange={this.props.handleChange}
 							           ></textarea>
-							          <label htmlFor="textarea1">Summary (Give a Brief Description of Who You Are)</label>
+							          <label htmlFor="textarea1"
+							          value={this.props.bio}></label>
 							        </div>
 							        {/* END SUMMARY FIELD */}
 							      </div>
@@ -119,7 +120,8 @@ class Intro extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
+											<button className="btn-large waves-effect waves-light modal-close" type="submit" name="action"
+											onClick={this.props.editIntro}>
 												Submit
 										  </button>
 									  </div>
@@ -138,11 +140,7 @@ class Intro extends React.Component {
 						<div className="row">
 							{/* USER BIO */}
 							{/*Change Bio to this.props.bio or this.state.bio*/}
-							<p className="profile-bio">Full Stack Web Developer with a passion for technology and a love of 
-							coding. Dedicated to adapting and learning new languages and frameworks with disciplines in 
-							HTML5, CSS3, JavaScript, jQuery, Node, SQL, and MongoDB. A natural knack for Front-End design 
-							with an artistic approach and an eye for detail. Familiar with Front-End framworks like 
-							Bootstrap, Materialize, React, Angular, and more.</p>
+							<p className="profile-bio">{this.props.bio}</p>
 						{/* END USER BIO */}
 						</div>
 					</div>

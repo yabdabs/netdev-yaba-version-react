@@ -18,19 +18,19 @@ class App extends Component {
 
 			//from MainForm
 			email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      signUpEmail:"",
-      signUpPassword: "",
-//PROFILE STATES
+   password: "",
+   firstName: "",
+   lastName: "",
+   signUpEmail:"",
+   signUpPassword: "",
+			//PROFILE STATES
 			idPic: "",
 			bio: "",
 			location: "",
 			skills: [],
 			porfolio: [],
 			friends: []
-			
+				
 
 		};  //Close State
 
@@ -56,6 +56,13 @@ class App extends Component {
 			}
 		})
 	}
+
+	// componentDidUpdate(){
+	// 	axios.get('/auth/user').then(response => {
+	// 		console.log("=========================\nCOMPONENT DID UPDATE RESPONSE")
+	// 		console.log(response)
+	// 	})
+	// }
 
 	_logout(event) {
 		event.preventDefault()
@@ -110,6 +117,13 @@ class App extends Component {
 		})
 	}
 
+// _getAfterDbUpdate() {
+// 		axios.get("/auth/user").then(response => {
+// 			console.log("RESPONSE IN _getAfterDbUpdate")
+// 			console.log(response)
+// 		})
+// 	}
+
 	handleChange = (event) => {
 		// console.log(this)
 		this.setState({
@@ -117,28 +131,44 @@ class App extends Component {
 		})
 	}
 
+
+
 		editIntro = (event) => {
 		event.preventDefault()
-		//or .put
+		debugger
+		console.log(this.state)
 		axios.put('/auth/user', {
 			firstName: this.state.firstName,
 			lastName: this.state.lastName,
 			bio: this.state.bio,
+			email: this.state.email
 			// location: this.state.location
 		}).then(response => {
-			console.log(response)
+			console.log(response.data)
 			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 			console.log("Intro Updated")
 			console.log("_________________________________")
 			console.log(response.data.user)
+
 			if (response.status === 200) {
-				this.setState({
-					firstName: this.state.firstName,
-					lastName: this.state.lastName,
-					bio: this.state.bio
+				axios.get("/auth/full-user", {
+				params:{
+					email: response.data.email
+				}}
+				).then(response2=> {
+					console.log("RESPONSE IN _getAfterDbUpdate")
+					console.log(response2)
 				})
 			}
-
+			
+			// if (response.status === 200) {
+			// 	this.setState({
+			// 		firstName: response.data.firstName,
+			// 		lastName: response.data.lastName,
+			// 		bio: response.data.bio,
+			// 		redirectTo: '/profile'
+			// 	})
+			// }
 		})
 	}//Close editIntro function
 
