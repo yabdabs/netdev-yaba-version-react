@@ -6,18 +6,39 @@ import {Button, Modal} from 'react-materialize';
 
 
 class Intro extends React.Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 
 		this.state = {
-
+			firstName: props.firstName,
+   lastName: props.lastName,
+   bio: props.bio
 		}//close State
 	}//close Constructor
 
+	handleChange = (event) => {
+		// console.log(this)
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
 
+	submit= (event) =>{
+		event.preventDefault()
+		this.props.editIntro(this.state.firstName, this.state.lastName, this.state.bio)
+	}
 	// componentWillMount(){
 // axios.get to fetch Intro fields from Database
 	// }
+
+	resetInput = (event) =>{
+		console.log("hit reset")
+			this.setState({
+			firstName: this.props.firstName,
+   lastName: this.props.lastName,
+   bio: this.props.bio
+		})//
+	}
 
 	render() {
 		return(
@@ -47,7 +68,7 @@ class Intro extends React.Component {
 								fixedFooter
 								trigger={
 									<div className="col s4 right-align">
-										<i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+										<i onClick={this.resetInput} className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
 									</div>
 								}>
 									
@@ -78,8 +99,8 @@ class Intro extends React.Component {
 								          type="text" 
 								          className="validate" 
 								          name="firstName"
-								          value={this.props.firstName}
-								          onChange={this.props.handleChange}
+								          value={this.state.firstName}
+								          onChange={this.handleChange}
 							          />
 							          <label htmlFor="first_name">First Name</label>
 							        </div>
@@ -92,8 +113,8 @@ class Intro extends React.Component {
 							           type="text"
 							           className="validate"
 							           name="lastName"
-							           value={this.props.lastName}
-							           onChange={this.props.handleChange}
+							           value={this.state.lastName}
+							           onChange={this.handleChange}
 							            />
 							          <label htmlFor="last_name">Last Name</label>
 							        </div>
@@ -107,11 +128,11 @@ class Intro extends React.Component {
 							           id="textarea1"
 							           className="materialize-textarea"
 							           name="bio"
-							           value={this.props.bio}
-							           onChange={this.props.handleChange}
+							           value={this.state.bio}
+							           onChange={this.handleChange}
 							           ></textarea>
 							          <label htmlFor="textarea1"
-							          value={this.props.bio}></label>
+							          value={this.state.bio}></label>
 							        </div>
 							        {/* END SUMMARY FIELD */}
 							      </div>
@@ -121,7 +142,7 @@ class Intro extends React.Component {
 										{/* SUBMIT BUTTON */}
 										<div className="row">
 											<button className="btn-large waves-effect waves-light modal-close" type="submit" name="action"
-											onClick={this.props.editIntro}>
+											onClick={this.submit}>
 												Submit
 										  </button>
 									  </div>

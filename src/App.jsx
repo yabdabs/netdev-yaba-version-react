@@ -125,6 +125,7 @@ class App extends Component {
 // 	}
 
 	handleChange = (event) => {
+
 		// console.log(this)
 		this.setState({
 			[event.target.name]: event.target.value
@@ -133,14 +134,14 @@ class App extends Component {
 
 
 
-		editIntro = (event) => {
-		event.preventDefault()
+		editIntro = (firstName, lastName, bio) => {
+		// event.preventDefault()
 		debugger
 		console.log(this.state)
 		axios.put('/auth/user', {
-			firstName: this.state.firstName,
-			lastName: this.state.lastName,
-			bio: this.state.bio,
+			firstName: firstName,
+			lastName: lastName,
+			bio: bio,
 			email: this.state.email
 			// location: this.state.location
 		}).then(response => {
@@ -155,9 +156,15 @@ class App extends Component {
 				params:{
 					email: response.data.email
 				}}
-				).then(response2=> {
+				).then(response2 => {
 					console.log("RESPONSE IN _getAfterDbUpdate")
 					console.log(response2)
+
+					this.setState({
+							firstName: firstName,
+							lastName: lastName,
+							bio: bio
+					})
 				})
 			}
 			
