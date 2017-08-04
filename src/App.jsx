@@ -120,19 +120,29 @@ class App extends Component {
 		editIntro = (event) => {
 		event.preventDefault()
 		//or .put
-		axios.post('/DECLARE ROUTE (check Laptop file', {
+		axios.put('/auth/user', {
 			firstName: this.state.firstName,
 			lastName: this.state.lastName,
 			bio: this.state.bio,
-			location: this.state.location
+			// location: this.state.location
 		}).then(response => {
 			console.log(response)
 			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 			console.log("Intro Updated")
 			console.log("_________________________________")
+			console.log(response.data.user)
+			if (response.status === 200) {
+				this.setState({
+					firstName: this.state.firstName,
+					lastName: this.state.lastName,
+					bio: this.state.bio
+				})
+			}
 
 		})
 	}//Close editIntro function
+
+
 
 
 
