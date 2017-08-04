@@ -1,5 +1,7 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
+import { Button, Toast } from 'react-materialize';
 
 class SignUp extends React.Component{
 	constructor(){
@@ -92,11 +94,16 @@ class SignUp extends React.Component{
 									</div>
 
 									<div className="row center-align">
-										<button className="btn waves-effect waves-light" type="submit" name="action"
-										 onClick={this.props.handleSignUp}
-										>
-										Join Now
-										</button>
+
+										<Toast toast="YOU CAN NOW SIGN IN">
+										JOIN NOW
+										</Toast>
+
+										{/*<button id="toast" className="btn-large waves-effect waves-light" type="submit" name="action" id="join-now" onClick={this.props.handleSignUp}>
+											Join Now									
+										</button>*/}
+										
+
 									</div>
 								</form>   
 							</div>

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Modal} from 'react-materialize';
-// import helper from '../util/helper';
+import helper from '../../util/helper';
+import { Button, Modal, Chip } from 'react-materialize';
+import IconButton from 'material-ui/IconButton';
 
 
 class Network extends React.Component {
@@ -11,57 +12,10 @@ class Network extends React.Component {
 			<div>
 				<div className="row">
 					{/* NETWORK SECTION TITLE */}
-					<div className="col s8 left-align">
+					<div className="col s12 left-align">
 						<h5>NETWORK</h5>
 					</div>
 					{/* END NETWORK SECTION TITLE */}
-
-					{/* EDIT ICON */}
-					<Modal
-							header='Modal Title'
-							fixedFooter
-							trigger={
-								<div className="col s4 right-align">
-									<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
-								</div>
-								
-							}> 
-							<p>MODAL CONTENT</p>
-
-							<div className="row">
-							    <form className="col s12">
-
-							      <div className="row">
-							      	{/* FIRST NAME FIELD */}
-							        <div className="input-field col s6">
-							          <input id="first_name" type="text" className="validate" />
-							          <label htmlFor="first_name">First Name</label>
-							        </div>
-							        {/* END  FIRST NAME FIELD */}
-
-							        {/* LAST NAME FIELD */}
-							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label htmlFor="last_name">Last Name</label>
-							        </div>
-							        {/* END LAST NAME FIELD */}
-							      </div>
-
-										
-										{/* SUBMIT BUTTON */}
-										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
-												Submit
-										  </button>
-									  </div>
-										{/* END SUBMIT BUTTON */}
-										
-							    </form>	
-								</div>
-
-					</Modal>
-					{/* END EDIT ICON */}
-
 				</div>
 
 				<div className="row">
@@ -73,7 +27,8 @@ class Network extends React.Component {
 
 					<div className="col s1">
 						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Nico Santa Ana" />
+							className="responsive-img z-depth-3" title="Nico Santa Ana"
+							tooltip="top-center" tooltipPosition="top-center" />
 					</div>
 
 					<div className="col s1">

@@ -1,8 +1,9 @@
 import React from 'react';
-// import helper from '../util/helper';
-import Profile from './profile'
-import Header from './header';
-import Background from './background';
+import { Button, Modal, Chip } from 'react-materialize';
+import helper from '../../util/helper';
+
+import Header from './Header';
+import Background from './Background';
 
 
 class Main extends React.Component {
@@ -20,3 +21,4 @@ class Main extends React.Component {
 };
 
 export default Main
+

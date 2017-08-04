@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-
     "axios": "^0.16.2",
     "bcrypt": "^1.0.2",
     "bcryptjs": "^2.4.3",
@@ -36,5 +35,4 @@
     "prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
   },
   "proxy": "http://localhost:8080"
-
 }
