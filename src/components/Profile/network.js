@@ -26,54 +26,54 @@ class Network extends React.Component {
 					{/* END LEFT ARROW */}
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Nico Santa Ana"
+						<img src="assets/img/network-1.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Nico Santa Ana"
 							tooltip="top-center" tooltipPosition="top-center" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Mike Russo" />
+						<img src="assets/img/network-2.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Mike Russo" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Joseph Adames" />
+						<img src="assets/img/network-3.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Joseph Adames" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Jeff Easley" />
+						<img src="assets/img/network-4.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Jeff Easley" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Varun Asimilli" />
+						<img src="assets/img/network-5.png" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Varun Asimilli" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Mike Yingling" />
+						<img src="assets/img/network-6.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Mike Yingling" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Alan Chu" />
+						<img src="assets/img/network-7.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Alan Chu" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Franklin Dawes" />
+						<img src="assets/img/network-8.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Franklin Dawes" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="James Dalton" />
+						<img src="assets/img/network-9.jpeg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="James Dalton" />
 					</div>
 
 					<div className="col s1">
-						<img src="assets/img/network.jpg" alt="" 
-							className="responsive-img z-depth-3" title="Eric Williams" />
+						<img src="assets/img/network-10.jpg" alt="" 
+							className="responsive-img z-depth-3 network-thumbnail" title="Eric Williams" />
 					</div>
 
 					{/* RIGHT ARROW */}
