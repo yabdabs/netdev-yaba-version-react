@@ -22,7 +22,10 @@ class Intro extends React.Component {
 						<div className="row">
 							{/* USER NAME */}
 							<div className="col s8 left-align">
-								<h4 className="username">First Lastname</h4>
+
+
+								<h4 className="username">{this.props.firstName} {this.props.lastName}</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
+
 							</div>
 							{/* END USER NAME */}
 
@@ -65,8 +68,17 @@ class Intro extends React.Component {
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
+
+							          <input
+							           id="last_name"
+							           type="text"
+							           className="validate"
+							           name="lastName"
+							           value={this.props.lastName}
+							           onChange={this.props.handleChange}
+							            />
+							          <label htmlFor="last_name">Last Name</label>
+
 							        </div>
 							        {/* END LAST NAME FIELD */}
 							      </div>
@@ -74,8 +86,17 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* SUMMARY FIELD */}
 							        <div className="input-field col s12">
-							          <textarea id="textarea1" className="materialize-textarea"></textarea>
-							          <label for="textarea1">Summary (Give a Brief Description of Who You Are)</label>
+
+							          <textarea
+							           id="textarea1"
+							           className="materialize-textarea"
+							           name="bio"
+							           value={this.props.bio}
+							           onChange={this.props.handleChange}
+							           ></textarea>
+							          <label htmlFor="textarea1"
+							          value={this.props.bio}></label>
+
 							        </div>
 							        {/* END SUMMARY FIELD */}
 							      </div>
@@ -84,7 +105,8 @@ class Intro extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
+											<button className="btn-large waves-effect waves-light modal-close" type="submit" name="action"
+											onClick={this.props.editIntro}>
 												Submit
 										  </button>
 									  </div>
@@ -102,12 +124,11 @@ class Intro extends React.Component {
 
 						<div className="row">
 							{/* USER BIO */}
-							<p className="profile-bio">Full Stack Web Developer with a passion for technology and a love of 
-							coding. Dedicated to adapting and learning new languages and frameworks with disciplines in 
-							HTML5, CSS3, JavaScript, jQuery, Node, SQL, and MongoDB. A natural knack for Front-End design 
-							with an artistic approach and an eye for detail. Familiar with Front-End framworks like 
-							Bootstrap, Materialize, React, Angular, and more.</p>
-							{/* END USER BIO */}
+
+							{/*Change Bio to this.props.bio or this.state.bio*/}
+							<p className="profile-bio">{this.props.bio}</p>
+						{/* END USER BIO */}
+
 						</div>
 					</div>
 					{/* END PROFILE INFO */}	

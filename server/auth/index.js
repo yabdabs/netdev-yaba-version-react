@@ -14,13 +14,30 @@ router.get(
 
 // this route is just used to get the user basic info
 router.get('/user', (req, res, next) => {
-	console.log('===== user!!======')
+	console.log('===== /GET user!!======')
 	console.log(req.user)
 	if (req.user) {
+		//Database query
+		User.findOne({email: req.user.email}, function(err, result){
+			console.log(result)
+			if (err) throw err;
+			if(result) return res.json({user :result})
+		})
 		return res.json({ user: req.user })
 	} else {
 		return res.json({ user: null })
 	}
+})
+
+router.get('/full-user', (req, res, next) => {
+	console.log("FULL USER ROUTE")
+	console.log(req.params.email)
+
+	User.findOne({email: req.params.email}, function(err, result){
+		console.log(result)
+		if (err) throw err;
+		if(result) return res.json(result)
+	})
 })
 
 router.post(
@@ -76,5 +93,29 @@ router.post('/signup', (req, res) => {
 		})
 	})
 })
+
+router.put('/user', (req, res) =>{
+	console.log("------------------")
+	console.log("AUTH/USER")
+	console.log(req.body)
+	console.log("------------------")
+	console.log("------------------")
+	console.log("REQ.USER.EMAIL")
+	console.log(req.body.email)
+	console.log("--------------------")
+	User.update({'email': req.body.email}, { $set: {firstName: req.body.firstName, lastName: req.body.lastName, bio:req.body.bio}}).exec(function(err, success){
+		if (err) throw err;
+		console.log("////////////////////////////////")
+		console.log("FIRST NAME POSTED")
+		console.log("////////////////////////////////")
+		console.log("------------------------------\n SUCESS RESPONSE")
+		console.log(success)
+		console.log("-----------------------------------\n")
+		return res.json(success)
+	})
+
+})
+
+
 
 module.exports = router

@@ -16,18 +16,18 @@ class Profile extends React.Component {
 	constructor() {
 		super()
 
-		this.state ={
-			proPic: null,
-			firstName: null,
-			lastName: null,
-			bio: null,
-			location: null,
-			skills: null,
-			porfolio: [],
-			friends: [null]
+		// this.state ={
+		// 	proPic: null,
+		// 	firstName: null,
+		// 	lastName: null,
+		// 	bio: null,
+		// 	location: null,
+		// 	skills: null,
+		// 	porfolio: [],
+		// 	friends: [null]
 			
 
-		};  //Close State
+		// };  //Close State
 
 		//BIND NECESSARY FUNCTIONS HERE
 		// this.getDevName = this.state.getDevName.bind(this)
@@ -35,36 +35,31 @@ class Profile extends React.Component {
 	} //Close Constructor
 
 //DECLARE FUNCTIONS TO PASS AS PROPS HERE
-	handleChange = (event) => {
-		console.log(this)
-		this.setState({
-			[event.target.name]: event.target.value
-		})
-	}
 
-	editIntro = (event) => {
-		event.preventDefault()
-		//or .put
-		axios.post('/DECLARE ROUTE (check Laptop file', {
-			firstName: this.state.firstName,
-			lastName: this.state.lastName,
-			bio: this.state.bio,
-			location: this.state.location
-		}).then(response => {
-			console.log(response)
-			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-			console.log("Intro Updated")
-			console.log("_________________________________")
 
-		})
-	}//Close editIntro function
+	// editIntro = (event) => {
+	// 	event.preventDefault()
+	// 	//or .put
+	// 	axios.post('/DECLARE ROUTE (check Laptop file', {
+	// 		firstName: this.state.firstName,
+	// 		lastName: this.state.lastName,
+	// 		bio: this.state.bio,
+	// 		location: this.state.location
+	// 	}).then(response => {
+	// 		console.log(response)
+	// 		console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+	// 		console.log("Intro Updated")
+	// 		console.log("_________________________________")
+
+	// 	})
+	// }//Close editIntro function
 
 	render() {
 		return (
 
 			<div className="col s8 profile-content z-depth-3">
-				<Intro handleChange={this.handleChange} editIntro={this.editIntro}  firstName={this.state.firstName} lastName={this.state.lastName}
-				bio={this.state.bio} />
+				<Intro handleChange={this.props.handleChange} editIntro={this.props.editIntro} idPic={this.props.idPic} firstName={this.props.firstName} lastName={this.props.lastName}
+			bio={this.props.bio} location={this.props.location} />
 				<Skills />
 				<Projects handleChange={this.handleChange}/>
 				<Network />

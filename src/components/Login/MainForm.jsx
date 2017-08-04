@@ -9,35 +9,20 @@ import SignUp from './SignUp'
 class MainForm extends Component {
 	constructor() {
 		super()
-		this.state = {
-			email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      signUpEmail:"",
-      signUpPassword: "",
-      // redirectTo: ""
-      // loggedIn: false,
-		}
+		
 		// this.googleSignin = this.googleSignin.bind(this)
 		// this.handleSubmit = this.handleSubmit.bind(this)
 		// this.handleChange = this.handleChange.bind(this)
 	}
 
-	handleChange = (event) => {
-		console.log(this)
-		this.setState({
-			[event.target.name]: event.target.value
-		})
-	}
-
+	
 	handleSubmit = (event) =>{
-		console.log(this)
+		// console.log(this)
 		event.preventDefault()
 		console.log('handleSubmit')
-		this.props._login(this.state.email, this.state.password)
-		console.log(this.state.email)
-		console.log(this.state.password)
+		this.props._login(this.props.email, this.props.password)
+		console.log(this.props.email)
+		console.log(this.props.password)
 		this.props._handleHomeRedirect
 	}
 
@@ -46,13 +31,14 @@ class MainForm extends Component {
 			// TODO - validate!
 			axios
 				.post('/auth/signup', {
-					email: this.state.signUpEmail,
-					password: this.state.signUpPassword,
-					firstName: this.state.firstName,
-					lastName: this.state.lastName
+					email: this.props.signUpEmail,
+					password: this.props.signUpPassword,
+					firstName: this.props.firstName,
+					lastName: this.props.lastName
 				})
 				.then(response => {
 					console.log(response)
+					alert("CLEAR FORM LATER")
 					if (!response.data.errmsg) {
 						console.log('youre good')
 						this.props._handleRedirect
@@ -71,10 +57,10 @@ class MainForm extends Component {
 			return (
 
 			<div>
-				<SignIn handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} email={this.state.email} password={this.state.password}/>
+				<SignIn handleChange = {this.props.handleChange} handleSubmit = {this.handleSubmit} email={this.props.email} password={this.props.password}/>
 
-				<SignUp handleChange ={this.handleChange} handleSignUp = {this.handleSignUp}  signUpEmail={this.state.signUpEmail} signUpPassword={this.state.signUpPassword}
-				firstName= {this.state.firstName} lastName={this.state.lastName}/>
+				<SignUp handleChange ={this.props.handleChange} handleSignUp = {this.handleSignUp}  signUpEmail={this.props.signUpEmail} signUpPassword={this.props.signUpPassword}
+				firstName= {this.props.firstName} lastName={this.props.lastName}/>
 			</div>
 			)
 		}
