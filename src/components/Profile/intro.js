@@ -1,23 +1,9 @@
 import React from 'react';
-import {Button, Modal} from 'react-materialize';
-// import helper from '../util/helper';
-// import axios from 'axios'
-
+import { Button, Modal, Chip } from 'react-materialize';
+import helper from '../../util/helper';
 
 
 class Intro extends React.Component {
-	constructor(){
-		super();
-
-		this.state = {
-
-		}//close State
-	}//close Constructor
-
-
-	// componentWillMount(){
-// axios.get to fetch Intro fields from Database
-	// }
 
 	render() {
 		return(
@@ -29,15 +15,17 @@ class Intro extends React.Component {
 						<img src="assets/img/user-placeholder.jpg" alt="" className="circle responsive-img profile-pic z-depth-2" />
 					</div>
 					{/* END PROFILE PIC* /}
+
 					{/* PROFILE INFO */}
 					<div className="col s8">
 					<br />
-					
 						<div className="row">
 							{/* USER NAME */}
 							<div className="col s8 left-align">
 
+
 								<h4 className="username">{this.props.firstName} {this.props.lastName}</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
+
 							</div>
 							{/* END USER NAME */}
 
@@ -47,7 +35,7 @@ class Intro extends React.Component {
 								fixedFooter
 								trigger={
 									<div className="col s4 right-align">
-										<i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+										<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
 									</div>
 								}>
 									
@@ -73,20 +61,14 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* FIRST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input
-								          id="first_name" 
-								          type="text" 
-								          className="validate" 
-								          name="firstName"
-								          value={this.props.firstName}
-								          onChange={this.props.handleChange}
-							          />
-							          <label htmlFor="first_name">First Name</label>
+							          <input id="first_name" type="text" className="validate" />
+							          <label for="first_name">First Name</label>
 							        </div>
 							        {/* END FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
+
 							          <input
 							           id="last_name"
 							           type="text"
@@ -96,6 +78,7 @@ class Intro extends React.Component {
 							           onChange={this.props.handleChange}
 							            />
 							          <label htmlFor="last_name">Last Name</label>
+
 							        </div>
 							        {/* END LAST NAME FIELD */}
 							      </div>
@@ -103,6 +86,7 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* SUMMARY FIELD */}
 							        <div className="input-field col s12">
+
 							          <textarea
 							           id="textarea1"
 							           className="materialize-textarea"
@@ -112,6 +96,7 @@ class Intro extends React.Component {
 							           ></textarea>
 							          <label htmlFor="textarea1"
 							          value={this.props.bio}></label>
+
 							        </div>
 							        {/* END SUMMARY FIELD */}
 							      </div>
@@ -139,25 +124,14 @@ class Intro extends React.Component {
 
 						<div className="row">
 							{/* USER BIO */}
+
 							{/*Change Bio to this.props.bio or this.state.bio*/}
 							<p className="profile-bio">{this.props.bio}</p>
 						{/* END USER BIO */}
+
 						</div>
 					</div>
 					{/* END PROFILE INFO */}	
-
-
-				{/*
-					<Modal
-						header='Modal Header'
-						fixedFooter
-						trigger={
-							<Button waves='light'>MODAL WITH FIXED FOOTER</Button>
-						}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-					</Modal>
-				*/}
-
 				</div>
 
 				<hr />
@@ -169,6 +143,23 @@ class Intro extends React.Component {
 };
 
 export default Intro;
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~\\
+ // NON ESSENTIAL FRONT-END JS \\
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
+
+//   constructor(){
+//   super();
+
+//   // Child has a state that follows the number of clicks
+//   this.state = {
+//     pic: null,
+//     name: null,
+//     location: null,
+//     bio: null
+//   };
+// } //close Constructor
+
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~\\
  // NON ESSENTIAL FRONT-END JS \\
