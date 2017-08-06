@@ -18,11 +18,11 @@ class App extends Component {
 
 			//from MainForm
 			email: "",
-   password: "",
-   firstName: "",
-   lastName: "",
-   signUpEmail:"",
-   signUpPassword: "",
+			password: "",
+			firstName: "",
+			lastName: "",
+			signUpEmail:"",
+			signUpPassword: "",
 			//PROFILE STATES
 			idPic: "",
 			bio: "",
@@ -30,8 +30,6 @@ class App extends Component {
 			skills: [],
 			porfolio: [],
 			friends: []
-				
-
 		};  //Close State
 
 		
@@ -56,13 +54,6 @@ class App extends Component {
 			}
 		})
 	}
-
-	// componentDidUpdate(){
-	// 	axios.get('/auth/user').then(response => {
-	// 		console.log("=========================\nCOMPONENT DID UPDATE RESPONSE")
-	// 		console.log(response)
-	// 	})
-	// }
 
 	_logout(event) {
 		event.preventDefault()
@@ -124,8 +115,7 @@ class App extends Component {
 // 		})
 // 	}
 
-	handleChange = (event) => {
-
+	handleChange = (event) => {	
 		// console.log(this)
 		this.setState({
 			[event.target.name]: event.target.value
@@ -145,16 +135,15 @@ class App extends Component {
 			email: this.state.email
 			// location: this.state.location
 		}).then(response => {
-			console.log(response.data)
+			console.log(response)
 			console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 			console.log("Intro Updated")
 			console.log("_________________________________")
-			console.log(response.data.user)
 
-			if (response.status === 200) {
-				axios.get("/auth/full-user", {
+			// if (response.status === 200) {
+				axios.get("/auth/fulluser", {
 				params:{
-					email: response.data.email
+					email: this.state.email
 				}}
 				).then(response2 => {
 					console.log("RESPONSE IN _getAfterDbUpdate")
@@ -166,7 +155,7 @@ class App extends Component {
 							bio: bio
 					})
 				})
-			}
+			// }end iff
 			
 			// if (response.status === 200) {
 			// 	this.setState({

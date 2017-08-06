@@ -29,11 +29,11 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
-router.get('/full-user', (req, res, next) => {
+router.get('/fulluser', (req, res, next) => {
 	console.log("FULL USER ROUTE")
-	console.log(req.params.email)
+	console.log(req.query.email)
 
-	User.findOne({email: req.params.email}, function(err, result){
+	User.findOne({email: req.query.email}, function(err, result){
 		console.log(result)
 		if (err) throw err;
 		if(result) return res.json(result)
@@ -108,7 +108,7 @@ router.put('/user', (req, res) =>{
 		console.log("////////////////////////////////")
 		console.log("FIRST NAME POSTED")
 		console.log("////////////////////////////////")
-		console.log("------------------------------\n SUCESS RESPONSE")
+		console.log("------------------------------\n SUcCESS RESPONSE")
 		console.log(success)
 		console.log("-----------------------------------\n")
 		return res.json(success)

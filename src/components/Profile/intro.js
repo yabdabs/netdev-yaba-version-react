@@ -3,16 +3,14 @@ import {Button, Modal} from 'react-materialize';
 // import helper from '../util/helper';
 // import axios from 'axios'
 
-
-
 class Intro extends React.Component {
 	constructor(props){
 		super(props);
 
 		this.state = {
 			firstName: props.firstName,
-   lastName: props.lastName,
-   bio: props.bio
+			lastName: props.lastName,
+			bio: props.bio
 		}//close State
 	}//close Constructor
 
@@ -27,9 +25,6 @@ class Intro extends React.Component {
 		event.preventDefault()
 		this.props.editIntro(this.state.firstName, this.state.lastName, this.state.bio)
 	}
-	// componentWillMount(){
-// axios.get to fetch Intro fields from Database
-	// }
 
 	resetInput = (event) =>{
 		console.log("hit reset")
