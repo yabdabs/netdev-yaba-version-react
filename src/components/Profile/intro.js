@@ -8,7 +8,7 @@ class Intro extends React.Component {
 		super(props);
 
 		this.state = {
-			firstName: props.firstName,
+			skill1: props.firstName,
 			lastName: props.lastName,
 			bio: props.bio
 		}//close State

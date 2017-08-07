@@ -116,6 +116,34 @@ router.put('/user', (req, res) =>{
 
 })
 
+router.post('/skills', (req, res) =>{
+	console.log("ROUTE HIT!!!")
+
+	User.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    else {
+      User.findOneAndUpdate(
+      	{
+      		email: req.body.email
+      	},
+      	{ $push: { "skillname": doc.skillName, "value": doc.skillValue} },
+      	 { new: true }, function(error, doc) {
+        // Send any errors to the browser
+        if (error) {
+          res.send(error);
+        }
+        // Or send the doc to the browser
+        else {
+          res.send(doc);
+        }
+      });
+    }
+  });
+})
+
 
 
 module.exports = router
