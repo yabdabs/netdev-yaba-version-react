@@ -29,9 +29,9 @@ class Intro extends React.Component {
 	resetInput = (event) =>{
 		console.log("hit reset")
 			this.setState({
-			firstName: this.props.firstName,
-   lastName: this.props.lastName,
-   bio: this.props.bio
+				firstName: this.props.firstName,
+				lastName: this.props.lastName,
+				bio: this.props.bio
 		})//
 	}
 

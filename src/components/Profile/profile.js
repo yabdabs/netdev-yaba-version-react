@@ -59,7 +59,7 @@ class Profile extends React.Component {
 			<div className="col s8 profile-content z-depth-3">
 				<Intro handleChange={this.props.handleChange} editIntro={this.props.editIntro} idPic={this.props.idPic} firstName={this.props.firstName} lastName={this.props.lastName}
 					bio={this.props.bio} location={this.props.location} />
-				<Skills handleAddSkill= {this.props.handleAddSkill}/>
+				<Skills handleAddSkill= {this.props.handleAddSkill} skills= {this.props.skills} getInitialSkills= {this.props.getInitialSkills}/>
 				<Projects handleChange={this.handleChange}/>
 				<Network />
 				<Contact handleChange={this.handleChange}/>

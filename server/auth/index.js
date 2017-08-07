@@ -116,34 +116,31 @@ router.put('/user', (req, res) =>{
 
 })
 
-router.post('/skills', (req, res) =>{
-	console.log("ROUTE HIT!!!")
+router.put('/skills', (req, res) =>{
+	console.log("skills ROUTE HIT!!!")
+	console.log(req.body)
+	User.update({'email':req.body.email}, { $push: { "skills": {"skillName": req.body.skillName, "value": req.body.value} } 
+	},
+	{ new: true} 
+	).exec( function(err, goodShit){
+		if (err) throw err;
+		console.log("PUSHED OBJECT INTO SKILLS ARRAY")
+		console.log(goodShit)
+		return res.json(goodShit)
+	})//close .exec
 
-	User.save(function(error, doc) {
-    // Send any errors to the browser
-    if (error) {
-      res.send(error);
-    }
-    else {
-      User.findOneAndUpdate(
-      	{
-      		email: req.body.email
-      	},
-      	{ $push: { "skillname": doc.skillName, "value": doc.skillValue} },
-      	 { new: true }, function(error, doc) {
-        // Send any errors to the browser
-        if (error) {
-          res.send(error);
-        }
-        // Or send the doc to the browser
-        else {
-          res.send(doc);
-        }
-      });
-    }
-  });
+
+})//close router.put
+
+
+router.get('/skills', (req, res) => {
+	console.log("get route for skills hit")
+	console.log(req.query.email)
+
+	User.findOne({email: req.query.email}, function(err, result){
+		console.log(result)
+		if (err) throw err;
+		if(result) return res.json(result)
+		})
 })
-
-
-
 module.exports = router

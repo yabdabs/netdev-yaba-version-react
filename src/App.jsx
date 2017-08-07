@@ -4,9 +4,6 @@ import { Route, Link } from 'react-router-dom'
 import './App.css'
 import MainForm from './components/Login/MainForm'
 import Main from './components/Profile/main'
-// import SignupForm from './components/SignupForm'
-/*import Header from './components/Header'*/
-/*import Home from './components/Home'*/
 
 class App extends Component {
 	constructor() {
@@ -107,14 +104,7 @@ class App extends Component {
 			redirectTo: "/profile"
 		})
 	}
-
-// _getAfterDbUpdate() {
-// 		axios.get("/auth/user").then(response => {
-// 			console.log("RESPONSE IN _getAfterDbUpdate")
-// 			console.log(response)
-// 		})
-// 	}
-
+	
 	handleChange = (event) => {	
 		// console.log(this)
 		this.setState({
@@ -156,33 +146,71 @@ class App extends Component {
 		})
 	}//Close editIntro function
 
+	_getSkills = () =>{
+		return axios.get("/auth/skills", {params: {email: this.state.email}
+		})
+	}
+
+
 	handleAddSkill = (skillName, skillValue) => {
-		var skillArray = []
+		alert("hit client side handleAddSkill function")
+		// var skillArray = []
 
-		// skillArray.skillName = skillName
-		// skillArray.skillValue = skillValue
+		// skillArray.push({skillName: skillName, skillValue: skillValue})
+		// var name = skillArray[0].skillName
+		// var value = skillArray[0].skillArray
+		// var email = this.state.email
 
-		skillArray.push({skillName: skillName, skillValue: skillValue})
-		var name = skillArray[0].skillName
-		var value = skillArray[0].skillArray
-		var email = this.state.email
-		
-		axios.post('/auth/skills', {
-	    skills: 
-		    [
-			    skillName: name,
-			    value: value,
-			    email: email
-		    ]
+		alert(skillName)
+		alert(skillValue)
+
+
+		axios.put('/auth/skills', {
+	    skillName: skillName,
+	    value: skillValue,
+	    email: this.state.email
     } //end post DATA
 		).then(response => {
 			console.log(response.data)
 			console.log("DATA POSTED")
-		})
 
+			this._getSkills()
+				.then(res => {
+					console.log("RESPONSE IN _getSkills")
+					console.log(res)
+
+					var newSkillsArray = []
+ 
+					for(var i=0; i< res.data.skills.length; i++){
+						newSkillsArray.push(res.data.skills[i])
+					}
+
+					this.setState({
+						skills: newSkillsArray
+					})
+			})
+		})
 	}
 
+	_getInitialSkills = () =>{
+		console.log("before getting inital database skills")
+		const email = this.state.email
+		axios.get('auth/skills', {params: {email}
+		}).then(res =>{
+			console.log("response from initial database skills")
+			console.log(res)
 
+			var newSkillsArray = []
+ 
+					for(var i=0; i< res.data.skills.length; i++){
+						newSkillsArray.push(res.data.skills[i])
+					}
+
+					this.setState({
+						skills: newSkillsArray
+					})
+		})
+	}
 
 
 
@@ -193,7 +221,7 @@ class App extends Component {
 
 			return <Main handleChange={this.handleChange} editIntro={this.editIntro} idPic={this.state.idPic} firstName={this.state.firstName} lastName={this.state.lastName}
 			bio={this.state.bio} skills={this.state.skills} portfolio={this.state.portfolio} friends={this.state.friends}
-			location={this.state.location} handleAddSkill = {this.handleAddSkill}
+			location={this.state.location} handleAddSkill = {this.handleAddSkill} skills= {this.state.skills} getInitialSkills= {this._getInitialSkills}
 			/>
 		}
 		

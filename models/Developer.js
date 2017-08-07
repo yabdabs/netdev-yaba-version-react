@@ -61,7 +61,7 @@ var DeveloperSchema = new Schema({
 
 	skills: [
 		 {
-			skillname: String,
+			skillName: String,
 			value: Number
 		}
 	],

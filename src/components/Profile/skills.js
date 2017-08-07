@@ -4,8 +4,8 @@ import helper from '../../util/helper';
 
 
 class Skills extends React.Component {
-		constructor(props){
-		super(props);
+		constructor(){
+		super();
 
 		this.state = {
 			skillName: "",
@@ -13,12 +13,9 @@ class Skills extends React.Component {
 		}//close State
 	}//close Constructor
 
-	// [
-	// 	{
-	// 		skillName: "",
-	// 		skillValue: ""
-	// 	}
-	// ]
+	componentWillMount(){
+		this.props.getInitialSkills()
+	}
 
 	handleChange = (event) => {
 		this.setState({
@@ -29,11 +26,35 @@ class Skills extends React.Component {
 
 	addSkillSubmit = (event) =>{
 		event.preventDefault()
+
+		console.log("clicked")
+		console.log(this.props)
 		this.props.handleAddSkill(this.state.skillName, this.state.skillValue)
 	}
-
-
+	
 	render() {
+			// styles ={
+			// 	width: skill.value + %
+			// }
+		// skill is the value of the current element
+  	// 	i is the array index of the current element
+		var renderSkills = this.props.skills.map((skill, i) =>
+			<div className="row skill-div" id={i} key ={skill._id}>
+				<div className="col s1">
+					<h6>{skill.skillName}</h6>
+				</div>
+				<div className="col s11">
+					<div className="progress">
+					  <div className="progress-bar progress-bar-success" role="progressbar" 
+					  aria-valuenow={skill.value} aria-valuemin="0" aria-valuemax="100">
+					    <span className="sr-only"></span>
+					  </div>
+					</div>
+				</div>
+			</div>
+  	)//close map function
+
+
 		return (
 
 			<div>
@@ -66,7 +87,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill One</label>
+							          <label htmlFor="skill_name">Skill One</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -94,7 +115,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Two</label>
+							          <label htmlFor="skill_name">Skill Two</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -122,7 +143,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Three</label>
+							          <label htmlFor="skill_name">Skill Three</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -150,7 +171,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Four</label>
+							          <label htmlFor="skill_name">Skill Four</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -204,7 +225,7 @@ class Skills extends React.Component {
 							           value = {this.state.skillName}
 							           name = "skillName"
 							          />
-							          <label for="skill_name">Add New Skill</label>
+							          <label htmlFor="skill_name">Add New Skill</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -231,7 +252,7 @@ class Skills extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick={this.addSkillSubmit}>
+											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick= {this.addSkillSubmit}>
 												ADD NEW SKILL
 										  </button>
 									  </div>
@@ -311,6 +332,8 @@ class Skills extends React.Component {
 					{/* END SKILL PROGRESS BAR */}
 				</div>
 
+				{renderSkills}
+				
 				<hr />
 				<br />
 			</div>

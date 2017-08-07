@@ -26,7 +26,7 @@ class Background extends React.Component {
 
 					<Profile handleChange={this.props.handleChange} editIntro={this.props.editIntro} idPic={this.props.idPic} firstName={this.props.firstName} lastName={this.props.lastName}
 			bio={this.props.bio} skills={this.props.skills} portfolio={this.props.portfolio} friends={this.props.friends}
-			location={this.props.location} handleAddSkill= {this.props.handleAddSkill}/>
+			location={this.props.location} handleAddSkill= {this.props.handleAddSkill} skills={this.props.skills} getInitialSkills= {this.props.getInitialSkills}/>
 
 
 					{/* SIDE MARGIN */}
