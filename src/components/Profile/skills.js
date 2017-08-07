@@ -33,26 +33,31 @@ class Skills extends React.Component {
 	}
 	
 	render() {
-			// styles ={
-			// 	width: skill.value + %
-			// }
 		// skill is the value of the current element
   	// 	i is the array index of the current element
-		var renderSkills = this.props.skills.map((skill, i) =>
-			<div className="row skill-div" id={i} key ={skill._id}>
-				<div className="col s1">
-					<h6>{skill.skillName}</h6>
-				</div>
-				<div className="col s11">
-					<div className="progress">
-					  <div className="progress-bar progress-bar-success" role="progressbar" 
-					  aria-valuenow={skill.value} aria-valuemin="0" aria-valuemax="100">
-					    <span className="sr-only"></span>
-					  </div>
+  	var percentage = "%"
+
+		var renderSkills = this.props.skills.map((skill, i) => {
+			var skillValue = skill.value.toString()
+			var Style= {
+				width: skillValue.concat(percentage)
+			}
+			return (
+				<div className="row skill-div" id={i} key={i}>
+					<div className="col s1">
+						<h6>{skill.skillName}</h6>
+					</div>
+					<div className="col s11">
+						<div className="progress">
+						  <div className="progress-bar progress-bar-success" role="progressbar" 
+						  aria-valuenow={skill.value} aria-valuemin="0" aria-valuemax="100" style ={Style}>
+						    <span className="sr-only"></span>
+						  </div>
+						</div>
 					</div>
 				</div>
-			</div>
-  	)//close map function
+			)
+		})//close map function
 
 
 		return (
