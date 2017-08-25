@@ -6,9 +6,9 @@ mongoose.promise = Promise
 
 var UserSchema = new Schema({
     // userName: {
-    // 	type: String,
-    // 	required: true,
-    // 	unique: true
+    //  type: String,
+    //  required: true,
+    //  unique: true
     // },
     firstName: {
         type: String,
@@ -16,12 +16,12 @@ var UserSchema = new Schema({
     },
 
     lastName: {
-    	type: String,
-    	required: true
+        type: String,
+        required: true
     },
     password: {
-    	type: String,
-    	required: true
+        type: String,
+        required: true
     },
     email: {
         type: String,
@@ -35,33 +35,42 @@ var UserSchema = new Schema({
     //May need to modify Location field
     location: {
      type: String,
-    	city: String,
-    	state: String
+        city: String,
+        state: String
     },
     skills: [{
-    	skillName: String,
-    	value: Number
+        skillName: String,
+        value: Number
     }],
     idPic: {
-    	type: String
+        type: String
     },
     pictureLinks: [{
-    	type: String
+        type: String
     }],
+    portfolio: [
+    {
+        title: String,
+        img: String,
+        demoLink: String,
+        gitHubLink: String
+
+    }
+    ],
     friends: [{
-    	id: String,
-    	name: String,
-    	idPic: String
+        id: String,
+        name: String,
+        idPic: String
     }]
 });
 
 UserSchema.methods = {
-	checkPassword: function(inputPassword) {
-		return bcrypt.compareSync(inputPassword, this.password)
-	},
-	hashPassword: plainTextPassword => {
-		return bcrypt.hashSync(plainTextPassword, 10)
-	}
+    checkPassword: function(inputPassword) {
+        return bcrypt.compareSync(inputPassword, this.password)
+    },
+    hashPassword: plainTextPassword => {
+        return bcrypt.hashSync(plainTextPassword, 10)
+    }
 
 };
 

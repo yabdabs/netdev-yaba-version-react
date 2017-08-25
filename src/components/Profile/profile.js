@@ -1,7 +1,7 @@
 //Import Components
 import React from 'react';
 import { Button, Modal, Chip } from 'react-materialize';
-// import helper from '../util/helper';
+
 import Intro from './intro';
 import Skills from './skills';
 import Projects from './projects';
@@ -15,51 +15,16 @@ class Profile extends React.Component {
 
 	constructor() {
 		super()
-
-		// this.state ={
-		// 	proPic: null,
-		// 	firstName: null,
-		// 	lastName: null,
-		// 	bio: null,
-		// 	location: null,
-		// 	skills: null,
-		// 	porfolio: [],
-		// 	friends: [null]
-			
-
-		// };  //Close State
-
-		//BIND NECESSARY FUNCTIONS HERE
-		// this.getDevName = this.state.getDevName.bind(this)
-		// 
 	} //Close Constructor
 
-//DECLARE FUNCTIONS TO PASS AS PROPS HERE
 
-
-	// editIntro = (event) => {
-	// 	event.preventDefault()
-	// 	//or .put
-	// 	axios.post('/DECLARE ROUTE (check Laptop file', {
-	// 		firstName: this.state.firstName,
-	// 		lastName: this.state.lastName,
-	// 		bio: this.state.bio,
-	// 		location: this.state.location
-	// 	}).then(response => {
-	// 		console.log(response)
-	// 		console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-	// 		console.log("Intro Updated")
-	// 		console.log("_________________________________")
-
-	// 	})
-	// }//Close editIntro function
 
 	render() {
 		return (
 
 			<div className="col s8 profile-content z-depth-3">
 				<Intro handleChange={this.props.handleChange} editIntro={this.props.editIntro} idPic={this.props.idPic} firstName={this.props.firstName} lastName={this.props.lastName}
-					bio={this.props.bio} location={this.props.location} />
+					bio={this.props.bio} location={this.props.location} pic={this.props.pic}/>
 				<Skills handleAddSkill= {this.props.handleAddSkill} skills= {this.props.skills} getInitialSkills= {this.props.getInitialSkills}/>
 				<Projects handleChange={this.handleChange}/>
 				<Network />
@@ -140,4 +105,3 @@ export default Profile;
 // 			<Contact />
 // 			)//Close Return
 // 	}//Close Render
-

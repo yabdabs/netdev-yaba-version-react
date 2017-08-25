@@ -1,11 +1,61 @@
 /* GENERAL STYLES*/
-body {
+#pattern_1 {
 	background-color: #F1EFEF;
-	background-image: url(../img/tile-bg.png);
+	background-image: url(../img/pattern-1.png);
 	background-attachment: fixed;
 	background-size: 360px;
 	background-repeat: repeat;
 }
+
+#pattern_2 {
+	background-color: #F1EFEF;
+	background-image: url(../img/pattern-2.jpg);
+	background-attachment: fixed;
+	background-size: 500px;
+	background-repeat: repeat;
+}
+
+#pattern_3 {
+	background-color: #F1EFEF;
+	background-image: url(../img/pattern-3.png);
+	background-attachment: fixed;
+	background-size: 500px;
+	background-repeat: repeat;
+}
+
+#pattern_4 {
+	background-color: #F1EFEF;
+	background-image: url(../img/pattern-4.jpg);
+	background-attachment: fixed;
+	background-size: 800px;
+	background-repeat: repeat;
+}
+
+#pattern_5 {
+	background-color: #F1EFEF;
+	background-image: url(../img/pattern-5.png);
+	background-attachment: fixed;
+	background-size: 400px;
+	background-repeat: repeat;
+}
+
+#pattern_6 {
+	background-color: #F1EFEF;
+	background-image: url(../img/pattern-6.jpg);
+	background-attachment: fixed;
+	background-size: 300px;
+	background-repeat: repeat;
+}
+
+#home-background {
+	background-color: #F1EFEF;
+}
+
+.pattern-form {
+	height: 180px;
+	overflow: hidden;
+}
+
 
 hr {
 	margin-left: 10px;
@@ -20,6 +70,13 @@ h4 {
 
 a {
 	color: black;
+}
+
+h6 {
+	color: black;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+}
 }
 
 
@@ -54,9 +111,9 @@ a {
 
 #logo {
 	color: black;
-	font-family: 'Roboto', cursive;
+	font-family: 'Sedgwick Ave', cursive;
+	font-weight: bolder;
 }
-
 
 .nav-icon {
 	color: black;
@@ -74,16 +131,31 @@ a {
 
 
 
-/* PROFILE DIV */
 
-/* PROFILE PAGE */
+
+/* MESSAGES */
+.message-row {
+	border-color: #F1EFEF;
+	border-style: solid;
+	border-width: 2.5px;
+}
+
+.message-icon {
+	margin-top: 15px;
+}
+
+.message-text {
+	margin-top: 12px;
+}
+
+
+/* PROFILE DIV */
 .profile-content {
 	background-color: white;
 	border-style: solid;
 	border-color: #F3F3F3;
 	border-width: 1px;
 }
-
 
 .edit-icon {
 	color: black;
@@ -103,7 +175,7 @@ a {
 	width: 80%;
 	max-width: 80%;
 	height: auto;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .profile-bio {
@@ -111,7 +183,6 @@ a {
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 }
-
 
 
 
@@ -123,6 +194,11 @@ a {
 .skill-div {
 	margin-bottom: 0px;
 	margin-top: 0px
+}
+
+.delete-icon {
+	color: black;
+	font-size: 32px;
 }
 
 .hundred {
@@ -223,6 +299,12 @@ a {
 	max-width: 80%;
 }
 
+.project-edit-div {
+	border-color: #F1EFEF;
+	border-style: solid;
+	border-width: 4px;
+}
+
 
 
 /* NETWORK SECTION */
@@ -231,6 +313,12 @@ a {
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-top: 12px;
+}
+
+.network-thumbnail {
+	border-color: #D1D1D1;
+	border-style: solid;
+	border-width: 2px;
 }
 
 
@@ -246,9 +334,25 @@ a {
 	color: black;
 }
 
+.contact-title {
+	margin-left: 12px;
+}
 
 
-/* SIGN IN PAGE */
-#toast {
-	margin-left: -100px;
+
+/* HOMEPAGE */
+.newsfeed-img {
+	width: 100%;
+}
+
+
+
+/* COMPANY PROFILE */
+.company-news {
+	margin-left: 12px;
+}
+
+.company-img {
+	height: 190px;
+	overflow: hidden;
 }

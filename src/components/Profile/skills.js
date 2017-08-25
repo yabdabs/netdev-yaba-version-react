@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Modal, Chip } from 'react-materialize';
-import helper from '../../util/helper';
 
 
 class Skills extends React.Component {
@@ -33,10 +32,10 @@ class Skills extends React.Component {
 	}
 	
 	render() {
+		// skill is the value of the current element
+  	// 	i is the array index of the current element
   	var percentage = "%"
 
-  	// skill is the value of the current element
-  	// i is the array index of the current element
 		var renderSkills = this.props.skills.map((skill, i) => {
 			var skillValue = skill.value.toString()
 			var Style= {
@@ -93,7 +92,6 @@ class Skills extends React.Component {
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
 							          <label htmlFor="skill_name">Skill One</label>
-
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -122,7 +120,6 @@ class Skills extends React.Component {
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
 							          <label htmlFor="skill_name">Skill Two</label>
-
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -219,6 +216,7 @@ class Skills extends React.Component {
 								<div className="row">
 								<p><strong>ADD ANY ADDITIONAL SKILLS</strong></p>
 							    <form className="col s12">
+
 							    	{/* SKILL ONE ROW */}
 							      <div className="row">
 							      	{/* SKILL NAME FIELD */}
@@ -273,69 +271,7 @@ class Skills extends React.Component {
 
 					</div>
 
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 1</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-success fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (success)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
 
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 2</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-info fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
-
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 3</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-warning fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (warning)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
-
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 4</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-danger fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (danger)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
 				</div>
 
 				{renderSkills}

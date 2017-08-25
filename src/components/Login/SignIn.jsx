@@ -4,10 +4,8 @@ import { Redirect } from 'react-router-dom'
 class SignIn extends React.Component {
     constructor(){
     super()
-    this.state = {
-        // email: '',  
-        // password: '',  
-        redirectTo: null
+    this.state = { 
+      redirectTo: null
     } //close state
   }//close constructor
 
@@ -76,8 +74,5 @@ class SignIn extends React.Component {
   } //close first conditional
 }//close render
 }
-
-    
-
 
 export default SignIn

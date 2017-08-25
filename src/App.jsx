@@ -5,6 +5,9 @@ import './App.css'
 import MainForm from './components/Login/MainForm'
 import Main from './components/Profile/main'
 
+import MainHomePage from './components/Homepage/Main.js'
+import SarahNetworkProfile from './components/Network/Main.js'
+
 class App extends Component {
 	constructor() {
 		super()
@@ -21,7 +24,7 @@ class App extends Component {
 			signUpEmail:"",
 			signUpPassword: "",
 			//PROFILE STATES
-			idPic: "",
+			pic: "",
 			bio: "",
 			location: "",
 			skills: [],
@@ -80,7 +83,7 @@ class App extends Component {
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
-						redirectTo: "/profile",
+						redirectTo: "/home",
 						firstName: response.data.user.firstName,
 						lastName: response.data.user.lastName,
 						bio: response.data.user.bio,
@@ -101,7 +104,8 @@ class App extends Component {
 
 	_handleHomeRedirect(){
 		this.setState({
-			redirectTo: "/profile"
+			// redirectTo: "/profile"
+			redirectTo: "/home"
 		})
 	}
 	
@@ -115,7 +119,7 @@ class App extends Component {
 
 		editIntro = (firstName, lastName, bio) => {
 		// event.preventDefault()
-			debugger
+			
 			console.log(this.state)
 			axios.put('/auth/user', {
 				firstName: firstName,
@@ -195,6 +199,7 @@ class App extends Component {
 	_getInitialSkills = () =>{
 		console.log("before getting inital database skills")
 		const email = this.state.email
+
 		axios.get('auth/skills', {params: {email}
 		}).then(res =>{
 			console.log("response from initial database skills")
@@ -212,17 +217,43 @@ class App extends Component {
 		})
 	}
 
+	_handleProfileClick = () => {
+		this.setState({
+			redirectTo: '/profile'
+		})
+	}
+
+	_handleClickPerson = () => {
+		this.setState({
+			redirectTo: '/sarah'
+		})
+	}
+
 
 
 	render() {
 		
+
+		//TO IMPROVE THIS WE CAN USE A SWITCH
+
 		if(this.state.redirectTo =="/profile") {
 			console.log('redirecting to profile route')
 
-			return <Main handleChange={this.handleChange} editIntro={this.editIntro} idPic={this.state.idPic} firstName={this.state.firstName} lastName={this.state.lastName}
+			return <Main handleChange={this.handleChange} editIntro={this.editIntro} idPic={this.state.idPic}
+			firstName={this.state.firstName} lastName={this.state.lastName} pic = {this.state.pic}
 			bio={this.state.bio} skills={this.state.skills} portfolio={this.state.portfolio} friends={this.state.friends}
-			location={this.state.location} handleAddSkill = {this.handleAddSkill} skills= {this.state.skills} getInitialSkills= {this._getInitialSkills}
+			location={this.state.location} handleAddSkill = {this.handleAddSkill} skills= {this.state.skills} 
+			getInitialSkills= {this._getInitialSkills} _handleProfileClick={this._handleProfileClick}
+			_handleClickPerson= {this._handleClickPerson}
 			/>
+		}
+
+		if(this.state.redirectTo == "/home"){
+			return <MainHomePage firstName={this.state.firstName} lastName={this.state.lastName} _handleProfileClick={this._handleProfileClick}/>
+		}
+
+		if(this.state.redirectTo == "/sarah"){
+			return <SarahNetworkProfile />
 		}
 		
 		return (

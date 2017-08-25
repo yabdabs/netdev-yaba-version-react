@@ -1,9 +1,29 @@
 import React from 'react';
 import { Button, Modal, Chip } from 'react-materialize';
-import helper from '../../util/helper';
 
 
 class Projects extends React.Component {
+	constructor(){
+		super()
+
+		this.state = {
+			title_1: "Project 1 Name",
+			img_1: "assets/img/project-placeholder.jpg",
+			demo_link_1: "",
+			github_link_1: ""
+		}
+	}
+
+	onSubmit = (event) => {
+		event.preventDefault()
+		alert("Submitted Info")
+		this.setState({
+			title_1: "Marvel Trivia Game",
+			img_1: "assets/img/screenshot.png",
+			demo_link_1: "https://jerling1989.github.io/TriviaGame/",
+			github_link_1: "https://github.com/Jerling1989/TriviaGame"
+		})
+	}
 
 	render() {
 		return(
@@ -201,7 +221,8 @@ class Projects extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
+											<button 
+											onClick={this.onSubmit} className="btn-large waves-effect waves-light" type="submit" name="action">
 												EDIT PROJECTS
 										  </button>
 									  </div>
@@ -287,10 +308,10 @@ class Projects extends React.Component {
 				<div className="row">
 					{/* PROJECT DIV */}
 					<div className="col s4">
-						<h6>Project 1 Name</h6>
-						<img src="assets/img/project-placeholder.jpg" alt="" 
+						<h6>{this.state.title_1}</h6>
+						<img src={this.state.img_1} alt="" 
 						className="responsive-img img-cell post-pic-gallery z-depth-3" />
-						<p><a href="#">DEMO</a> | <a href="#">GitHub</a></p>
+						<p><a target="_blank" href={this.state.demo_link_1}>DEMO</a> | <a target="_blank" href={this.state.github_link_1}>GitHub</a></p>
 					</div>
 					{/* END PROJECT DIV */}
 					

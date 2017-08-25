@@ -10,8 +10,8 @@ class Contact extends React.Component {
 			<div className="contact-div">
 				<div className="row">
 					{/* CONTACT SECTION TITLE */}
-					<div className="col s8 left-align">
-						<h5>CONTACT</h5>
+					<div className="col s12 left-align">
+						<h5 className="contact-title"><strong>CONTACT</strong></h5>
 					</div>
 					{/* END CONTACT SECTION TITLE */}
 				</div>
