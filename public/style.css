@@ -1,5 +1,5 @@
 /* GENERAL STYLES*/
-body {
+#pattern_1 {
 	background-color: #F1EFEF;
 	background-image: url(../img/tile-bg.png);
 	background-attachment: fixed;
@@ -73,6 +73,22 @@ a {
 
 
 
+/* MESSAGES */
+.message-row {
+	border-color: #F1EFEF;
+	border-style: solid;
+	border-width: 2.5px;
+}
+
+.message-icon {
+	margin-top: 5px;
+}
+
+.message-text {
+	margin-top: 12px;
+}
+
+
 /* PROFILE DIV */
 .profile-content {
 	background-color: white;
@@ -118,6 +134,11 @@ a {
 .skill-div {
 	margin-bottom: 0px;
 	margin-top: 0px
+}
+
+.delete-icon {
+	color: black;
+	font-size: 32px;
 }
 
 .hundred {
@@ -218,9 +239,15 @@ a {
 	max-width: 80%;
 }
 
+.project-edit-div {
+	border-color: #F1EFEF;
+	border-style: solid;
+	border-width: 4px;
+}
+
+
 
 /* NETWORK SECTION */
-
 .arrow {
 	font-size: 35px;
 	margin-left: 15px;
@@ -230,4 +257,13 @@ a {
 
 
 
-/* COMMENT SECTION *
+/* CONTACT SECTION */
+.contact-div {
+	background-image: url(../img/contact-bg6.png);
+	margin-left: -12px;
+	margin-right: -12px;
+}
+
+.form-label {
+	color: black;
+}

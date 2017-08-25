@@ -77,11 +77,6 @@ a {
 /* PROFILE DIV */
 
 /* PROFILE PAGE */
-/*.progress {
-	height: 10px;
-}
-*/
-
 .profile-content {
 	background-color: white;
 	border-style: solid;
@@ -217,7 +212,6 @@ a {
 
 
 /* PROJECT SECTION */
-
 .img-cell {
 	height: 285px;
 	margin-bottom: 2%;
@@ -232,8 +226,6 @@ a {
 
 
 /* NETWORK SECTION */
-
-
 .arrow {
 	font-size: 35px;
 	margin-left: 15px;
@@ -244,7 +236,6 @@ a {
 
 
 /* CONTACT SECTION */
-
 .contact-div {
 	background-image: url(../img/contact-bg6.png);
 	margin-left: -12px;
@@ -253,4 +244,11 @@ a {
 
 .form-label {
 	color: black;
+}
+
+
+
+/* SIGN IN PAGE */
+#toast {
+	margin-left: -100px;
 }

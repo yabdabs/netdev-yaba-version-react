@@ -1,5 +1,6 @@
 //Import Components
 import React from 'react';
+import { Button, Modal, Chip } from 'react-materialize';
 // import helper from '../util/helper';
 import Intro from './intro';
 import Skills from './skills';

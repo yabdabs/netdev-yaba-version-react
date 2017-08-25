@@ -93,6 +93,7 @@ class Skills extends React.Component {
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
 							          <label htmlFor="skill_name">Skill One</label>
+
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -121,6 +122,7 @@ class Skills extends React.Component {
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
 							          <label htmlFor="skill_name">Skill Two</label>
+
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -217,7 +219,6 @@ class Skills extends React.Component {
 								<div className="row">
 								<p><strong>ADD ANY ADDITIONAL SKILLS</strong></p>
 							    <form className="col s12">
-
 							    	{/* SKILL ONE ROW */}
 							      <div className="row">
 							      	{/* SKILL NAME FIELD */}
