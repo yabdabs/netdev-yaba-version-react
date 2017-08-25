@@ -33,10 +33,10 @@ class Skills extends React.Component {
 	}
 	
 	render() {
-		// skill is the value of the current element
-  	// 	i is the array index of the current element
   	var percentage = "%"
 
+  	// skill is the value of the current element
+  	// i is the array index of the current element
 		var renderSkills = this.props.skills.map((skill, i) => {
 			var skillValue = skill.value.toString()
 			var Style= {
