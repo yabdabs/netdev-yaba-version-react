@@ -232,8 +232,6 @@ class App extends Component {
 
 
 	render() {
-		
-
 		//TO IMPROVE THIS WE CAN USE A SWITCH
 
 		if(this.state.redirectTo =="/profile") {

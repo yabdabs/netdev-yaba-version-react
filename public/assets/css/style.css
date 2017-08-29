@@ -77,9 +77,6 @@ h6 {
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 }
-}
-
-
 
 /* LOGIN PAGE */
 #login-page {
@@ -99,8 +96,8 @@ h6 {
 	border-color: #F3F3F3;
 	border-width: 5px;
 	/*opacity: 0.95;*/
-}
 
+}
 
 
 /* NAVBAR STYLES */

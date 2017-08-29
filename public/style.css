@@ -77,14 +77,11 @@ h6 {
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 }
-}
-
-
 
 /* LOGIN PAGE */
 #login-page {
 	background-color: #F1EFEF;
-	background-image: url(../img/code-bg.jpg);
+	background-image: url(./img/code-bg.jpg);
 	background-attachment: fixed;
 	background-size: 100%;
 }

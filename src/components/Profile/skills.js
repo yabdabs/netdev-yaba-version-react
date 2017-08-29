@@ -58,7 +58,6 @@ class Skills extends React.Component {
 			)
 		})//close map function
 
-
 		return (
 
 			<div>
@@ -80,137 +79,6 @@ class Skills extends React.Component {
 									</div>
 									
 								}> 
-								<p><strong>UPDATE SKILL NAME AND INPUT YOUR PROFICIENCY IN THAT SKILL (rounded up by five)</strong></p>
-
-								{/* UPDATE SKILLS */}
-								<div className="row">
-							    <form className="col s12">
-
-							    	{/* SKILL ONE ROW */}
-							      <div className="row">
-							      	{/* SKILL NAME FIELD */}
-							        <div className="input-field col s2">
-							          <input id="skill_name" type="text" className="validate" />
-							          <label htmlFor="skill_name">Skill One</label>
-							        </div>
-							        {/* END SKILL NAME FIELD */}
-
-							        {/* SKILL EFFICIENCY INPUT */}
-							        <div className="input-field col s9">
-							        	<br />
-							          <p class="range-field">
-										      <input type="range" id="test5" min="0" max="100" />
-										    </p>
-							        </div>
-							        {/* END SKILL EFFICIENCY INPUT */}
-
-							        {/* SKILL DELETE ICON */}
-							        <div className="input-field col s1">
-							        	<br />
-							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
-							        </div>
-							        {/* END SKILL DELETE ICON */}
-							      </div>
-							    	{/* END SKILL ONE ROW */}
-
-
-							    	{/* SKILL TWO ROW */}
-							      <div className="row">
-							      	{/* SKILL NAME FIELD */}
-							        <div className="input-field col s2">
-							          <input id="skill_name" type="text" className="validate" />
-							          <label htmlFor="skill_name">Skill Two</label>
-							        </div>
-							        {/* END SKILL NAME FIELD */}
-
-							        {/* SKILL EFFICIENCY INPUT */}
-							        <div className="input-field col s9">
-							        	<br />
-							          <p className="range-field">
-										      <input type="range" id="test5" min="0" max="100" />
-										    </p>
-							        </div>
-							        {/* END SKILL EFFICIENCY INPUT */}
-
-							        {/* SKILL DELETE ICON */}
-							        <div className="input-field col s1">
-							        	<br />
-							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
-							        </div>
-							        {/* END SKILL DELETE ICON */}
-							      </div>
-							    	{/* END SKILL TWO ROW */}
-
-
-							    	{/* SKILL THREE ROW */}
-							      <div className="row">
-							      	{/* SKILL NAME FIELD */}
-							        <div className="input-field col s2">
-							          <input id="skill_name" type="text" className="validate" />
-							          <label htmlFor="skill_name">Skill Three</label>
-							        </div>
-							        {/* END SKILL NAME FIELD */}
-
-							        {/* SKILL EFFICIENCY INPUT */}
-							        <div className="input-field col s9">
-							        	<br />
-							          <p class="range-field">
-										      <input type="range" id="test5" min="0" max="100" />
-										    </p>
-							        </div>
-							        {/* END SKILL EFFICIENCY INPUT */}
-
-							        {/* SKILL DELETE ICON */}
-							        <div className="input-field col s1">
-							        	<br />
-							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
-							        </div>
-							        {/* END SKILL DELETE ICON */}
-							      </div>
-							    	{/* END SKILL THREE ROW */}
-
-
-							    	{/* SKILL FOUR ROW */}
-							      <div className="row">
-							      	{/* SKILL NAME FIELD */}
-							        <div className="input-field col s2">
-							          <input id="skill_name" type="text" className="validate" />
-							          <label htmlFor="skill_name">Skill Four</label>
-							        </div>
-							        {/* END SKILL NAME FIELD */}
-
-							        {/* SKILL EFFICIENCY INPUT */}
-							        <div className="input-field col s9">
-							        	<br />
-							          <p class="range-field">
-										      <input type="range" id="test5" min="0" max="100" />
-										    </p>
-							        </div>
-							        {/* END SKILL EFFICIENCY INPUT */}
-
-							        {/* SKILL DELETE ICON */}
-							        <div className="input-field col s1">
-							        	<br />
-							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
-							        </div>
-							        {/* END SKILL DELETE ICON */}
-							      </div>
-							    	{/* END SKILL FOUR ROW */}
-
-							      <br />
-										
-										{/* SUBMIT BUTTON */}
-										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
-												UPDATE SKILLS
-										  </button>
-									  </div>
-										{/* END SUBMIT BUTTON */}
-							    </form>	
-								</div>
-								{/* END UPDATE SKILLS */}
-
-								<hr />
 
 								{/* ADD NEW SKILL */}
 								<div className="row">
@@ -285,3 +153,56 @@ class Skills extends React.Component {
 };
 	
 export default Skills;
+
+
+//put this after line 83 when the time comes
+// <p><strong>UPDATE SKILL NAME AND INPUT YOUR PROFICIENCY IN THAT SKILL (rounded up by five)</strong></p>
+
+{/* UPDATE SKILLS */}
+								// <div className="row">
+							 //    <form className="col s12">
+
+							 //    	{/* SKILL ONE ROW */}
+							 //      <div className="row">
+							 //      	{/* SKILL NAME FIELD */}
+							 //        <div className="input-field col s2">
+							 //          <input id="skill_name" type="text" className="validate" />
+							 //          <label htmlFor="skill_name">Skill One</label>
+							 //        </div>
+							 //        {/* END SKILL NAME FIELD */}
+
+							 //        {/* SKILL EFFICIENCY INPUT */}
+							 //        <div className="input-field col s9">
+							 //        	<br />
+							 //          <p class="range-field">
+								// 		      <input type="range" id="test5" min="0" max="100" />
+								// 		    </p>
+							 //        </div>
+							 //        {/* END SKILL EFFICIENCY INPUT */}
+
+							 //        {/* SKILL DELETE ICON */}
+							 //        <div className="input-field col s1">
+							 //        	<br />
+							 //          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
+							 //        </div>
+							 //        {/* END SKILL DELETE ICON */}
+							 //      </div>
+							 //    	{/* END SKILL ONE ROW */}
+
+
+							    
+							 //      <br />
+										
+								// 		{/* SUBMIT BUTTON */}
+								// 		<div className="row">
+								// 			<button className="btn-large waves-effect waves-light" type="submit" name="action">
+								// 				UPDATE SKILLS
+								// 		  </button>
+								// 	  </div>
+								// 		{/* END SUBMIT BUTTON */}
+							 //    </form>	
+								// </div>
+								// {/* END UPDATE SKILLS */}
+
+
+								// <hr />
