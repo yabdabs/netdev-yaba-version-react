@@ -3,25 +3,24 @@
 ## Community For Developer and Companies. This Project is still under development!
 
 #### Heroku deployment coming soon
+<br>
 
------------------------------------------------------------------------------
 ### Login/ Sign Up page. Below the user creates an account and clicks the sign up button
 
-![sign up](./public/assets/github_img/login-signup.PNG)__
------------------------------------------------------------------------------
+![sign up](./public/assets/github_img/login-signup.PNG)
+<br>
 
 ### Here the user will login with the email and password from when they signed up
 
-![log in](./public/assets/github_img/sign-in.PNG)__
-
+![log in](./public/assets/github_img/sign-in.PNG)
+<br>
 
 -----------------------------------------------------------------------------
-### Once the user signs in, they will be redirected to the homepage. The user can then select the profile icon to
-### go to his/her profile.
+### Once the user signs in, they will be redirected to the homepage. The user can then select the profile icon to go to his/her profile.
 (Other icons are working, but the components are still under construction)
 
 ![homepage](./public/assets/github_img/homepage.PNG)
-
+<br>
 
 -----------------------------------------------------------------------------
 ### This is what the user profile looks initially. The user can then click the icon to edit their Intro/BIO section. (Modal will appear)
