@@ -1,9 +1,8 @@
 # NetDev.me
-
-Heroku deployment coming soon
 -------------------------------------
-Community For Developer and Companies. This Project is still under development!
+## Community For Developer and Companies. This Project is still under development!
 -------------------------------------
+#### Heroku deployment coming soon
 
 ### Login/ Sign Up page. Below the user creates an account and clicks the sign up button
 
@@ -15,7 +14,8 @@ Community For Developer and Companies. This Project is still under development!
 ![log in](./public/assets/github_img/sign-in.PNG)
 
 ### Once the user signs in, they will be redirected to the homepage. The user can then select the profile icon to
-go to his/her profile. 
+### go to his/her profile.
+
 (Other icons are working, but the components are still under construction)
 
 ![homepage](./public/assets/github_img/homepage.PNG)
@@ -33,6 +33,14 @@ go to his/her profile.
 
 ![after editing bio](./public/assets/github_img/after-edit-bio.PNG)
 
+### The user can then click the icon to edit their skills section. The modal to add skills will appear
+
+![select skills icon](./public/assets/github_img/select-skills.PNG)
+
+### In this modal, the user can add a skill. They type in the skill they want to add (HMTL) and then drag the arrow to select their proficiency in that skill(0-100). Here the user selects 86. 
+#### NOTE: More skills were added in this step to show it's use. 
+
+![add skill](./public/assets/github_img/add-new-skill.PNG)
 
 ## Built With
 
