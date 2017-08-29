@@ -8,11 +8,13 @@
 ### Login/ Sign Up page. Below the user creates an account and clicks the sign up button
 
 ![sign up](./public/assets/github_img/login-signup.PNG)
-<br>
+
+<br><br>
 
 ### Here the user will login with the email and password from when they signed up
 
 ![log in](./public/assets/github_img/sign-in.PNG)
+
 <br>
 
 -----------------------------------------------------------------------------
@@ -20,6 +22,7 @@
 (Other icons are working, but the components are still under construction)
 
 ![homepage](./public/assets/github_img/homepage.PNG)
+
 <br>
 
 -----------------------------------------------------------------------------
